@@ -4,7 +4,7 @@ import Tab from '@/page/Tab'
 import back from "@/page/back"
 import backUser from '@/components/back-user'
 import backCategory from '@/components/back-catagory';
-import categoryMain from '@/components/back-catagory-main';
+import backArtical from "@/components/back-artical";
 Vue.use(Router)
 
 export default new Router({
@@ -26,14 +26,11 @@ export default new Router({
         },
         {
           path: 'category',
-          redirect: '/back/category/main',
           component: backCategory,
-          children: [
-            {
-              path: 'main',
-              component: categoryMain
-            },
-          ]
+        },
+        {
+          path: 'artical',
+          component: backArtical,
         },
       ]
     },

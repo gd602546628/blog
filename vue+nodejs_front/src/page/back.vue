@@ -1,18 +1,23 @@
 <template>
 
   <div class="layout" v-if="isAdmin">
-    <el-menu mode="horizontal" theme="dark" active-name="1" class="topNav">
+    <el-menu mode="horizontal" theme="dark" active-name="1" class="topNav" v-on:on-select="select">
       <div class="layout-nav">
 
-        <Menu-item name="1" @click="toUser()">
-          <Icon type="ios-navigate"></Icon>
+        <Menu-item name="user">
+          <Icon type="ios-person"></Icon>
           用户管理
         </Menu-item>
 
 
-        <Menu-item name="2" @click=toCategory()>
+        <Menu-item name="category">
           <Icon type="ios-keypad"></Icon>
           分类管理
+        </Menu-item>
+
+        <Menu-item name="artical">
+          <Icon type="ios-list"></Icon>
+          文章管理
         </Menu-item>
 
 
@@ -43,13 +48,9 @@
       }
     },
     methods: {
-      toUser(){
-        console.log(1)
-        router.push('user');
-      },
-      toCategory(){
-        console.log(2)
-        router.push('category')
+      select(name){
+
+          router.push(name)
       }
     },
     created(){

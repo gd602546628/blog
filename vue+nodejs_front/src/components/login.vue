@@ -120,7 +120,7 @@
             sessionStorage.userInfo = JSON.stringify(this.loginUser)
           } else {
             this.errorMessage.show = true;
-            this.errorMessage.show.message = data.data.message;
+            this.errorMessage.message = data.data.message;
           }
         })
       },

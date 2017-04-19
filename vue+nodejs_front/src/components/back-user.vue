@@ -8,7 +8,7 @@
       </div>
     </el-menu>-->
     <div class="layout-content">
-      <el-table stripe :columns="columns1" :data="data1"></el-table>
+      <el-table stripe :columns="columns1" :data="data1" class="table"></el-table>
       <Page :total="total" :current="currentPage" :page-size="this.limit" class="user-page" v-on:on-change="getUser"></Page>
     </div>
   </div>
@@ -86,6 +86,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .table{
+      margin:20px 60px 0 60px;
     }
   }
 

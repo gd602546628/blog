@@ -21,34 +21,44 @@ class Api {
   }
 
   /*登录*/
-  login(data){
-    return axios.post(baseUrl+'user/login',data)
+  login(data) {
+    return axios.post(baseUrl + 'user/login', data)
   }
 
   /*获取用户*/
-  getUser(data){
-    return axios.post(baseUrl+'user/getUser',data)
+  getUser(data) {
+    return axios.post(baseUrl + 'user/getUser', data)
   }
 
   /*添加分类*/
 
-  AddCatagory(data){
-    return axios.post(baseUrl+'catagory/add',data)
+  AddCatagory(data) {
+    return axios.post(baseUrl + 'catagory/add', data)
   }
 
   /*获取分类*/
-  getCatagory(data){
-    return axios.post(baseUrl+'catagory/get',data)
+  getCatagory(data) {
+    return axios.post(baseUrl + 'catagory/get', data)
   }
 
   /*删除分类*/
-  removeCatagory(data){
-    return axios.post(baseUrl+'catagory/remove',data)
+  removeCatagory(data) {
+    return axios.post(baseUrl + 'catagory/remove', data)
   }
 
   /*修改分类*/
-  updataCatagory(data){
-    return axios.post(baseUrl+'catagory/updata',data)
+  updataCatagory(data) {
+    return axios.post(baseUrl + 'catagory/updata', data)
+  }
+
+  /*新增文章*/
+  addArtical(data) {
+    return axios.post(baseUrl + 'artical/add', data)
+  }
+
+  /*分页获取文章*/
+  getArtical(data) {
+    return axios.post(baseUrl + 'artical/get', data)
   }
 }
 

@@ -9,8 +9,13 @@
 
     <div class="content-wrap">
       <Add v-show="current==2"></Add>
-      <el-main v-show="current==1"></el-main>
-      <el-editor v-show="current==3"></el-editor>
+      <el-main v-show="current==1" :current="current" v-on:toEditor="toEditor"></el-main>
+      <el-editor v-show="current==3"
+                 :catagorySelect="catagorySelect"
+                 :editorContent="editorContent"
+                 :tittle="tittle"
+                 :desription="desription"
+      ></el-editor>
     </div>
 
   </div>
@@ -26,16 +31,31 @@
       'el-menu': Menu,
       Add: Add,
       'el-main': Main,
-      'el-editor':edi
+      'el-editor':edi,
     },
     data(){
       return {
-        current: 1
+        current: 1,
+        catagorySelect:'',
+        editorContent:'',
+        tittle:'',
+        desription:''
       }
     },
     methods: {
       select(name){
         this.current = name
+      },
+
+      toEditor(artical){
+          console.log(artical)
+        this.catagorySelect=artical.catagoryId;
+        this.editorContent=artical.content;
+        this.tittle=artical.title;
+        this.desription=artical.discription;
+
+        this.current=3;
+        console.log(this.editorContent)
       }
     }
   }

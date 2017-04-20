@@ -14,8 +14,8 @@ let app = express();
 app.use('./public', express.static(__dirname + '/public'));
 
 //bodyparser设置
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true,limit:'5mb'}));
+app.use(bodyParser.json({limit:'5mb'}));
 /*跨域处理*/
 app.all('*', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -30,6 +30,8 @@ app.all('*', function (req, res, next) {
 app.use('/api/user', require('./api/user/userApi'));
 /*分类模块*/
 app.use('/api/catagory', require('./api/catagory/CatagoryApi'));
+/*文章模块*/
+app.use('/api/artical', require('./api/artical/articalApi'));
 
 mongoose.connect('mongodb://localhost:27017/blog', function (err) {
     if (err) {

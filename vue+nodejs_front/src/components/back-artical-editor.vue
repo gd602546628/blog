@@ -38,11 +38,7 @@
   export default {
     data(){
       return {
-        //catagorySelect: this.currentArtical.catagory,
         catagoryList: [],
-        //editorContent: this.currentArtical.content,
-        //tittle: this.currentArtical.title,
-       // desription: this.currentArtical.discription,
         errMessage: {
           show: false,
           message: ''
@@ -51,7 +47,7 @@
       }
     },
 
-    props:['catagorySelect','editorContent','tittle','desription'],
+    props:['catagorySelect','editorContent','tittle','desription','articalId'],
     methods: {
       onSelect(item){
 
@@ -62,21 +58,21 @@
         console.log(this.catagorySelect)
         console.log(this.desription)
         console.log(this.editorContent)
-       /* Api.addArtical({
+        Api.editorArtical({
           title: this.tittle,
           catagory: this.catagorySelect,
           discription: this.desription,
-          content: this.editorContent
+          content: this.editorContent,
+          id:this.articalId
         }).then((data) => {
           if (data.data.code == 0) {
-            this.successMessage = true;
-            this.errMessage.show = false;
+            window.location.reload();
           } else {
             this.successMessage = false;
             this.errMessage.show = true;
             this.errMessage.message = data.data.message;
           }
-        })*/
+        })
       }
 
     },

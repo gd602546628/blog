@@ -25,7 +25,7 @@ module.exports = new mongoose.Schema({
     /*添加时间*/
     addTime: {
         type: Date,
-        default: new Date()
+        default: new Date().getTime()
     },
 
 

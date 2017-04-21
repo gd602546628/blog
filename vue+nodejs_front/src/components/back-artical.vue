@@ -15,6 +15,7 @@
                  :editorContent="editorContent"
                  :tittle="tittle"
                  :desription="desription"
+                 :articalId="articalId"
       ></el-editor>
     </div>
 
@@ -39,7 +40,8 @@
         catagorySelect:'',
         editorContent:'',
         tittle:'',
-        desription:''
+        desription:'',
+        articalId:''
       }
     },
     methods: {
@@ -53,9 +55,8 @@
         this.editorContent=artical.content;
         this.tittle=artical.title;
         this.desription=artical.discription;
-
+        this.articalId=artical._id;
         this.current=3;
-        console.log(this.editorContent)
       }
     }
   }

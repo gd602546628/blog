@@ -60,6 +60,11 @@ class Api {
   getArtical(data) {
     return axios.post(baseUrl + 'artical/get', data)
   }
+
+  /*编辑文章*/
+  editorArtical(data) {
+    return axios.post(baseUrl + 'artical/editor', data)
+  }
 }
 
 

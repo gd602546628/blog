@@ -99,7 +99,7 @@
   .add-button {
     width: 100%;
     height: 40px;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .label {
@@ -121,7 +121,7 @@
   }
 
   .add-alert {
-    margin-top: 60px;
+    margin-top: 80px;
   }
 
 </style>

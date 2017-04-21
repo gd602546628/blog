@@ -24,6 +24,20 @@ router.post('/add', (req, res, next) => {
     let discription = req.body.discription || "";
     let content = req.body.content;
 
+
+    if (catagory == undefined) {
+        responseData.code = 4;
+        responseData.message = 'catagory字段不能为空';
+        res.json(responseData);
+        return
+    } else if (title == undefined) {
+        responseData.code = 4;
+        responseData.message = 'tittle字段不能为空';
+        res.json(responseData);
+        return
+    }
+
+
     if (title == '' || catagory == '' || content == '') {
         responseData.code = 1;
         responseData.message = '标题、分类或内容不能为空';
@@ -83,12 +97,81 @@ router.post('/get', (req, res, next) => {
             responseData.message = '获取成功';
             responseData.count = counts;
             responseData.pages = pages;
-            responseData.articals=articals
+            responseData.articals = articals
             res.json(responseData);
             return
         })
     })
 
-})
+});
+
+/*编辑文章*/
+
+router.post('/editor', (req, res, next) => {
+
+    let title = req.body.title;
+    let catagory = req.body.catagory;
+    let discription = req.body.discription || "";
+    let content = req.body.content;
+    let id = req.body.id;
+
+    if (catagory == undefined) {
+        responseData.code = 4;
+        responseData.message = 'catagory字段不能为空';
+        res.json(responseData);
+        return
+    } else if (title == undefined) {
+        responseData.code = 4;
+        responseData.message = 'tittle字段不能为空';
+        res.json(responseData);
+        return
+    }
+
+    if (title == '' || catagory == '' || content == '') {
+        responseData.code = 1;
+        responseData.message = '标题、分类或内容不能为空';
+        res.json(responseData);
+        return
+    } else {
+
+        Artical.findById(id).then((artical) => {
+            if (artical) {
+
+                Artical.findOne({_id: {$ne: id}, catagory: catagory, title: title}).then((sameArtical) => {
+                    if (sameArtical) {
+                        responseData.code = 1;
+                        responseData.message = '已近存在同名同分类的文章';
+                        res.json(responseData);
+                        return
+                    } else {
+                        Artical.update({_id: id}, {
+                            title: title,
+                            catagory: catagory,
+                            content: content,
+                            discription: discription
+                        })
+                            .then(() => {
+                                responseData.code = 0;
+                                responseData.message = '修改成功';
+                                res.json(responseData);
+                                return;
+                            })
+                    }
+                })
+
+            } else {
+                responseData.code = 1;
+                responseData.message = '编辑的文章不存在';
+                res.json(responseData);
+                return
+            }
+        })
+
+    }
+
+
+});
+
+
 
 module.exports = router;

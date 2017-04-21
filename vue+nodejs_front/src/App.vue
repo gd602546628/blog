@@ -13,33 +13,24 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-  html{
+  html {
     height: 100%;
   }
-  body{
-   height: 100%;
+
+  body {
+    height: 100%;
+    background: #eee !important;
   }
+
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+   // font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: "Microsoft YaHei";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
 
   }
-/*.banner{
-  background-image:url('./assets/banner.jpg');
 
-  overflow: scroll;
-  position: fixed;
-  top:0;
-  border-bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0.2;
-  height: 100%;
-  width: 100%;
-  filter: blur(0px);
-}*/
   * {
     margin: 0;
     padding: 0;

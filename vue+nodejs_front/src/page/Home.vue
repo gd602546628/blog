@@ -1,6 +1,6 @@
 <template>
-  <div class="home" v-if="isInList">
-    <Card v-for="(item,index) in articalList" class="artical-card">
+  <div class="home">
+    <Card v-for="(item,index) in articalList" class="artical-card" :key="index">
 
       <h2 class="title">{{item.title}}</h2>
       <div class="artical-item">
@@ -23,45 +23,33 @@
       </div>
 
       <div class="button-wrap">
+        <!--<router-link :to=""></router-link>-->
         <Button type="primary" class="readArtical" @click="readArtical(index)">查看文章</Button>
       </div>
 
     </Card>
+
+    <Page
+      :total="total"
+      :page-size="limit"
+      v-on:on-change="getArtical"
+      class="catagory-page"
+    ></Page>
   </div>
 
-
-  <Card v-else class="artical">
-    <div >
-      <h1 class="tittle">{{currentArtical.title}}</h1>
-      <div class="top">
-        <div>分类：<i>{{currentArtical.catagory.name}}</i></div>
-        <div>添加时间：<i>{{dataFrom(currentArtical.addTime)}}</i></div>
-        <div>阅读量：<i>{{currentArtical.views}}</i></div>
-      </div>
-      <div class="discription" v-show="currentArtical.discription">
-        <p>简介</p>
-        <div>{{currentArtical.discription}}</div>
-      </div>
-      <div class="content">
-        <p>正文</p>
-        <div v-html="currentArtical.content"></div>
-      </div>
-    </div>
-    <Button class="close" type="primary" ref="closeBtn" @click="closeArtical()">关闭文章</Button>
-  </Card>
 </template>
 
 <script>
   import Api from '../api/api'
+  import artical from '../components/artical.vue'
   export default{
     name: 'home',
     data () {
       return {
-        limit: 10,
+        limit: 4,
         total: 0,
         articalList: [],
-        isInList:true,
-        currentArtical:{}
+        currentArtical: {},
       }
     },
     methods: {
@@ -69,44 +57,23 @@
         return new Date(value).toLocaleString()
       },
 
-      /*节流函数*/
-      throttle(method,delay,duration){
-        var timer=null, begin=new Date();
-        return function(){
-          var context=this, args=arguments, current=new Date();;
-          clearTimeout(timer);
-          if(current-begin>=duration){
-            method.apply(context,args);
-            begin=current;
-          }else{
-            timer=setTimeout(function(){
-              method.apply(context,args);
-            },delay);
+      getArtical(page){
+        Api.getArtical(
+          {
+              page:page,
+              limit:this.limit
           }
-        }
+        ).then((data)=>{
+          this.articalList = data.data.articals;
+        })
       },
 
-      fixedBtn(obj){
-           let oBtn=obj;
-          let body=document.body;
-          let fix = function(){
-            oBtn.style.top=body.scrollTop+200+'px';
-          };
-          document.addEventListener('scroll',this.throttle(fix,300,1000))
-      },
       readArtical(index){
-          this.currentArtical=this.articalList[index];
-          this.isInList=false;
-
-          setTimeout(()=>{
-            let oBtn=this.$refs.closeBtn.$el
-            this.fixedBtn(oBtn)
-          },100)
+        this.currentArtical = this.articalList[index];
+        //this.$router.replace('artical/'+ this.currentArtical._id)
+        this.$router.push({path: 'artical', query: {id: this.currentArtical._id}})
       },
 
-      closeArtical(){
-        this.isInList=true;
-      }
     },
 
     created(){
@@ -115,6 +82,7 @@
         limit: this.limit
       }).then((data) => {
         this.articalList = data.data.articals;
+        this.total = data.data.count;
       })
     },
 
@@ -124,16 +92,13 @@
 
 <style lang='scss' rel='stylesheet/scss' scoped>
   .home {
-    margin-right: 440px;
-    margin-left: 100px;
-    margin-top: 10px;
     .artical-card {
       margin-bottom: 50px;
-      .button-wrap{
+      .button-wrap {
         display: flex;
         width: 100%;
-       justify-content: flex-end;
-        .readArtical{
+        justify-content: flex-end;
+        .readArtical {
         }
       }
 
@@ -143,61 +108,28 @@
         text-align: center;
       }
 
-      .artical-item{
+      .artical-item {
         display: flex;
         margin-bottom: 10px;
         font-size: 16px;
-        span{
+        span {
           width: 100px;
           text-align: left;
         }
-        p{
+        p {
           flex: 1;
           word-break: break-all;
 
         }
       }
     }
-  }
 
-  .artical{
-    position:relative;
-    margin-right: 440px;
-    margin-top: 10px;
-    .tittle{
-      text-align: center;
-      font-size: 40px;
-    }
-    .top{
+    .catagory-page{
       display: flex;
       justify-content: center;
-      margin-top:20px;
-      div{
-        margin-left: 20px;
-        i{
-          color:#39f;
-        }
-      }
-    }
-    .discription{
-      margin-top:10px;
-      p{font-size: 20px}
-      div{
-        font-size: 20px;
-        margin-top:10px;
-      }
-    }
-
-    .content{
-    margin-top:10px;
-      p{font-size: 20px}
-      div{margin-top:10px}
-    }
-
-    .close{
-      position: absolute;
-      top:150px;
-      right: 40px;
+      margin-bottom: 40px;
     }
   }
+
+
 </style>

@@ -65,6 +65,19 @@ class Api {
   editorArtical(data) {
     return axios.post(baseUrl + 'artical/editor', data)
   }
+
+  /*根据分类获取文章*/
+
+  getArticalByCatagory(data){
+    return axios.post(baseUrl + 'artical/getByCatagory', data)
+  }
+
+  /*文章阅读数统计*/
+
+  articalViewsAdd(data){
+    return axios.post(baseUrl + 'artical/viewsAdd', data)
+  }
+
 }
 
 

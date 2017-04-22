@@ -89,19 +89,34 @@ router.post('/get', (req, res, next) => {
     let pages = 0;
     let skip = (page - 1) * limit;
     let counts = 0;
-    Artical.count().then((count) => {
-        pages = count / limit;
-        counts = count;
-        Artical.find().limit(limit).skip(skip).populate(['catagory']).then((articals) => {
-            responseData.code = 0;
-            responseData.message = '获取成功';
-            responseData.count = counts;
-            responseData.pages = pages;
-            responseData.articals = articals
-            res.json(responseData);
-            return
+
+    let id = req.body.id;
+    if (id) {
+        Artical.findById(id).populate(['catagory']).then((info) => {
+            if (info) {
+                responseData.code = 0;
+                responseData.message = '获取成功';
+                responseData.artical = info;
+                res.json(responseData);
+                return;
+            }
         })
-    })
+    } else {
+        Artical.count().then((count) => {
+            pages = count / limit;
+            counts = count;
+            Artical.find().limit(limit).skip(skip).populate(['catagory']).then((articals) => {
+                responseData.code = 0;
+                responseData.message = '获取成功';
+                responseData.count = counts;
+                responseData.pages = pages;
+                responseData.articals = articals
+                res.json(responseData);
+                return
+            })
+        })
+    }
+
 
 });
 
@@ -172,6 +187,57 @@ router.post('/editor', (req, res, next) => {
 
 });
 
+/*根据分类获取文章*/
+router.post('/getByCatagory', (req, res, next) => {
+    let catagoryId = req.body.catagoryId;
+    let page = req.body.page;
+    let limit = req.body.limit;
+    let pages = 0;
+    let skip = (page - 1) * limit;
+    let counts = 0;
+    if (catagoryId) {
+        Artical.count({catagoryId: catagoryId}).then((count) => {
+            counts = count;
+            pages = Math.ceil(counts / limit);
+            Artical.find({catagory: catagoryId}).limit(limit).skip(skip).then((articals) => {
+                responseData.code = 0;
+                responseData.message = '获取成功';
+                responseData.articals = articals;
+                responseData.count = counts;
+                responseData.pages = pages;
+                res.json(responseData);
+                return;
+            })
+        })
+
+    } else {
+        res.code = 0;
+        res.message = '分类Id字段不能为空'
+    }
+
+})
+
+/*文章阅读数统计*/
+
+router.post('/viewsAdd', (req, res, next) => {
+    let id = req.body.id;
+    Artical.findById(id).then((artical) => {
+        if (artical) {
+            artical.views++;
+            artical.save().then(() => {
+                responseData.code = 0;
+                responseData.message = '添加成功';
+                res.json(responseData);
+                return
+            })
+        } else {
+            responseData.code = 1;
+            responseData.message = '文章不存在';
+            res.json(responseData);
+            return;
+        }
+    })
+})
 
 
 module.exports = router;

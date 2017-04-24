@@ -23,7 +23,20 @@
 <style rel="stylesheet/scss" lang="scss">
   /*播放器歌单列表高度*/
   .aplayer-list{
-    height:100px !important;
+    height:200px !important;
+    overflow-x:visible;
+  }
+  .aplayer{
+    margin: 0 !important;
+    background: #fff !important;
+  }
+  .aplayer-music{
+    user-select: none !important;
+    cursor: move !important;
+  }
+
+  .aplayer-volume{
+    background: red !important;
   }
   html {
     height: 100%;

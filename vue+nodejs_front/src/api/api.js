@@ -78,6 +78,24 @@ class Api {
     return axios.post(baseUrl + 'artical/viewsAdd', data)
   }
 
+  /*新增歌单*/
+
+  addMusicList(data){
+    return axios.post(baseUrl + 'music/add', data)
+  }
+
+  /*获取歌单*/
+
+  getMusicList(data){
+    return axios.post(baseUrl + 'music/get', data)
+  }
+
+  /*删除歌单*/
+
+  removeMusicList(data){
+    return axios.post(baseUrl + 'music/remove', data)
+  }
+
 }
 
 

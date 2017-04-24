@@ -20,6 +20,11 @@
           文章管理
         </Menu-item>
 
+        <Menu-item name="music">
+          <Icon type="ios-list"></Icon>
+          音乐管理
+        </Menu-item>
+
 
       </div>
     </el-menu>

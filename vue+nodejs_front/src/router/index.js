@@ -9,6 +9,7 @@ import Home from '@/page/Home';
 import artical from '@/components/artical';
 import Catagory from '@/page/Catagory';
 import CataArtical from '@/components/catagory-artical';
+import backMusic from '@/components/back-music';
 Vue.use(Router)
 
 export default new Router({
@@ -58,6 +59,10 @@ export default new Router({
         {
           path: 'artical',
           component: backArtical,
+        },
+        {
+          path: 'music',
+          component: backMusic,
         },
       ]
     },

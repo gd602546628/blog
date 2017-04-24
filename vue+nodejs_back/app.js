@@ -32,6 +32,8 @@ app.use('/api/user', require('./api/user/userApi'));
 app.use('/api/catagory', require('./api/catagory/CatagoryApi'));
 /*文章模块*/
 app.use('/api/artical', require('./api/artical/articalApi'));
+/*音乐模块*/
+app.use('/api/music',require('./api/music/musicApi'));
 
 mongoose.connect('mongodb://localhost:27017/blog', function (err) {
     if (err) {

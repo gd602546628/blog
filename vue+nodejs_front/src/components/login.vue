@@ -106,7 +106,7 @@
     },
     methods: {
       goback(){
-        router.push('back')
+        router.push('../back')
       },
       login(){
         Api.login({

@@ -34,11 +34,15 @@
   .catagory {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom:30px;
     .catagory-item {
       width: 20%;
       padding: 10px;
       .catagory-item-card {
         height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

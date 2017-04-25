@@ -85,14 +85,14 @@
             item.play = 2;
           }
         } else {
-          this.songs=[];
-          this.$nextTick(()=>{
+          this.songs = [];
+          this.$nextTick(() => {
             this.songs = this.musicList[index].list;
-            this.$nextTick(function(){
+            this.$nextTick(function () {
               let aplayer = this.$refs.player.control;
               aplayer.play();
               this.play = true;
-              this.currentPlay=index
+              this.currentPlay = index
               new Drag(this.$refs.playerWrap)
             })
           })
@@ -110,7 +110,7 @@
 
     },
     created(){
-      Api.getMusicList({all:true}).then((data) => {
+      Api.getMusicList({all: true}).then((data) => {
         this.musicList = data.data.data;
 
       })
@@ -184,15 +184,15 @@
         flex-wrap: wrap;
         margin-top: 70px;
         .music-list-item {
-          width: 200px;
-          height: 200px;
+          width: 160px;
+          height: 160px;
           margin-left: 50px;
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
           position: relative;
           overflow: hidden;
-          margin-top:40px;
+          margin-top: 40px;
           .play-icon {
             font-size: 30px;
             position: absolute;
@@ -214,7 +214,9 @@
             bottom: -40px;
             max-height: 40px;
             overflow: hidden;
-            line-height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 14px;
             background: rgba(0, 0, 0, .5);
             color: #FFF;

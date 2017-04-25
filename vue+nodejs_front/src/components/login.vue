@@ -65,6 +65,8 @@
         <Button type="primary" @click="logout()">退出</Button>
       </div>
     </Card>
+
+
   </div>
 </template>
 
@@ -199,6 +201,7 @@
         cursor: pointer;
       }
     }
+
   }
 
 </style>

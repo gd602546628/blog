@@ -49,8 +49,7 @@
 <style lang='scss' rel='stylesheet/scss'>
   .artical {
     position: relative;
-    margin-right: 440px;
-    margin-top: 10px;
+    margin-bottom:30px;
     .tittle {
       text-align: center;
       font-size: 40px;

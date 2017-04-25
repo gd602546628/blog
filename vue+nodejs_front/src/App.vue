@@ -44,7 +44,7 @@
 
   body {
     height: 100%;
-    background: #eee !important;
+    background: #f5f7f9 !important;
   }
 
   #app {
@@ -53,6 +53,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+   /* background-image:url('./assets/bg_body.jpg');*/
     .footer{
       background: #464c5b;
       height: 100px;
@@ -73,6 +74,7 @@
     margin: 0;
     padding: 0;
   }
+
 
 
 </style>

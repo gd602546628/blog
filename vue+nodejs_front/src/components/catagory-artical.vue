@@ -2,24 +2,24 @@
   <div class="home">
     <Card v-for="(item,index) in articalList" class="artical-card" :key="index">
 
-      <h2 class="title">{{item.title}}</h2>
+      <h2 class="title color-font">{{item.title}}</h2>
       <div class="artical-item">
-        <span>分类：</span>
-        <p>{{item.catagory.name}}</p>
+        <span>分类</span>
+        <p class="color-font">{{item.catagory.name}}</p>
       </div>
 
       <div class="artical-item">
         <span>简介：</span>
-        <p>{{item.discription}}</p>
+        <p class="color-font">{{item.discription}}</p>
       </div>
 
       <div class="artical-item">
         <span>创建时间：</span>
-        <p>{{dataFrom(item.addTime)}}</p>
+        <p class="color-font">{{dataFrom(item.addTime)}}</p>
       </div>
       <div class="artical-item">
         <span>阅读量：</span>
-        <p>{{item.views}}</p>
+        <p class="color-font">{{item.views}}</p>
       </div>
 
       <div class="button-wrap">
@@ -95,6 +95,8 @@
   .home {
     .artical-card {
       margin-bottom: 50px;
+      color: #657180;
+
       .button-wrap {
         display: flex;
         width: 100%;

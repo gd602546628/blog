@@ -1,39 +1,43 @@
 <template>
   <div>
-   <!-- <Tabs class="tabs-wrap">
-      <Tab-pane label="首页" name="name1" class="tabs-item">
-        <home></home>
-      </Tab-pane>
-      <Tab-pane label="分类" name="name2" class="tabs-item">标签二的内容</Tab-pane>
-      <Tab-pane label="标签三" name="name3" class="tabs-item">标签三的内容</Tab-pane>
-    </Tabs>-->
-
     <div class="tabs-wrap">
-      <Menu mode="horizontal" theme="dark" :active-name="currentRoute" class="tabs" v-on:on-select="select" >
+      <Menu mode="horizontal" theme="dark" :active-name="currentRoute" class="tabs" v-on:on-select="select">
 
         <Menu-item name="home">
           <Icon type="home"></Icon>
-         首页
+          首页
         </Menu-item>
 
         <Menu-item name="catagory">
           <Icon type="android-list"></Icon>
-         分类
+          分类
         </Menu-item>
 
-        <Menu-item name="1">
+        <Menu-item name="about">
           <Icon type="ios-navigate"></Icon>
-         关于
+          关于
         </Menu-item>
       </Menu>
     </div>
 
-    <div class="content">
+    <div class="content-wrap">
+      <div class="content">
 
-      <router-view class="view"></router-view>
+        <div class="view">
+          <router-view></router-view>
+        </div>
 
-      <div class="right-content">
-        <login class="login"></login>
+        <div class="right-content">
+          <login class="login"></login>
+          <Card class="weibo">
+            <iframe width="100%" height="400" class="share_self" frameborder="0" scrolling="no"
+                    src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=400&fansRow=1&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2607676964&verifier=fe5f84f0&dpc=1"></iframe>
+          </Card>
+        </div>
+      </div>
+
+      <div class="u_wrap">
+        <div id="uyan_frame"></div>
       </div>
     </div>
 
@@ -48,11 +52,11 @@
   export default {
     name: 'tab',
     components: {
-      login:login
+      login: login
     },
     data () {
       return {
-          currentRoute:'home'
+        currentRoute: 'home'
       }
     },
     methods: {
@@ -62,37 +66,54 @@
     },
 
     created(){
-      this.currentRoute=this.$route.name;
+      this.currentRoute = this.$route.name;
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" rel="stylesheet/scss" scoped>
-  .tabs-wrap{
+  .tabs-wrap {
     background: #464c5b;
-    .tabs{
-     max-width: 1200px;
+    .tabs {
+      max-width: 1200px;
       margin: 0 auto;
       height: 40px !important;
       line-height: 40px !important;
-      li{
+      li {
       }
     }
   }
 
-  .content{
-    display: flex;
+  .content-wrap{
+    max-width: 1200px;
     margin: 0 auto;
-    margin-top:60px;
-    display: flex;
-    justify-content: center;
-    .view{
-      flex: 1;
-      margin-right:100px;
-      max-width: 800px;
+    .u_wrap {
+      margin-top: 50px;
+    }
+    .content {
+      display: flex;
+      margin-top: 60px;
+      justify-content: center;
+      width: 100%;
+      .view {
+        flex: 1;
+        margin-right: 100px;
+        max-width: 800px;
+      }
+    }
+    .right-content {
+      width: 300px;
+      .weibo {
+        margin-top: 20px;
+
+      }
     }
   }
+
+
+
+
 
 </style>
 

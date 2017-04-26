@@ -70,6 +70,10 @@ export default new Router({
           path: 'music',
           component: backMusic,
         },
+        {
+          path: 'laboratory',
+          component: backMusic,
+        },
       ]
     },
     {

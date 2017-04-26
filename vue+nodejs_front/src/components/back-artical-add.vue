@@ -53,7 +53,6 @@
 
     methods: {
       onSelect(item){
-        console.log(item)
       },
 
       onSubmit(){
@@ -61,7 +60,8 @@
           title: this.tittle,
           catagory: this.catagorySelect,
           discription: this.desription,
-          content: this.editorContent
+          content: this.editorContent,
+          token:sessionStorage.token
         }).then((data) => {
           if (data.data.code == 0) {
              window.location.reload();

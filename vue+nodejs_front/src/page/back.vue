@@ -25,6 +25,10 @@
           音乐管理
         </Menu-item>
 
+        <Menu-item name="laboratory">
+          <Icon type="ios-list"></Icon>
+         实验室管理
+        </Menu-item>
 
       </div>
     </el-menu>
@@ -32,20 +36,25 @@
     <router-view class="layout-content"></router-view>
   </div>
 
-  <div v-else class="noPowerToback">对不起，只有管理员才能进入后台管理</div>
+  <div v-else class="noPowerToback">
+    <div class="tittle">
+      一不小心被你发现了这里，可是只能管理员才能进入后台页面哦。
+    </div>
+    <login class="login"></login>
+  </div>
 
 </template>
 
 <script type="text/ecmascript-6">
   import {Icon, MenuItem, Menu, Breadcrumb, BreadcrumbItem} from 'iview';
-  import router from"../router/index"
+  import router from"../router/index";
+  import login from '@/components/login.vue';
   export default {
     components: {
       Icon: Icon,
       'Menu-item': MenuItem,
       'el-menu': Menu,
-      'Breadcrumb': Breadcrumb,
-      'Breadcrumb-item': BreadcrumbItem
+      'login':login
     },
     data(){
       return {
@@ -82,5 +91,12 @@
   .noPowerToback {
     font-size: 40px;
     margin: 0 auto;
+    .tittle{
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .login{
+      margin: 0 auto;
+    }
   }
 </style>

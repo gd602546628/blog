@@ -8,7 +8,7 @@ let http = require('http');
 let router = express.Router();
 
 let responseData = {};
-
+let tokenModule = require('../../token/token')
 let MusicList = require('../../models/MusicList');
 router.use((req, res, next) => {
     responseData = {
@@ -21,6 +21,14 @@ router.use((req, res, next) => {
 /*增加歌单*/
 router.post('/add', (req, res, next) => {
 
+    let token = req.body.token;
+    let tokenResult = tokenModule.check(token);
+    if (!tokenResult.success) {
+        responseData.code = 1;
+        responseData.message = tokenResult.message;
+        res.json(responseData);
+        return
+    }
     let id = req.body.id;
     if (!!!id) {
         responseData.code = 1;
@@ -149,6 +157,14 @@ router.post('/remove',(req,res,next)=>{
 
     let id = req.body.id;
 
+    let token = req.body.token;
+    let tokenResult = tokenModule.check(token);
+    if (!tokenResult.success) {
+        responseData.code = 1;
+        responseData.message = tokenResult.message;
+        res.json(responseData);
+        return
+    }
     MusicList.remove({_id:id}).then(()=>{
         res.json(responseData)
         return

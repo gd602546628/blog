@@ -32,27 +32,36 @@ class Api {
 
   /*添加分类*/
 
-  AddCatagory(data) {
+  AddCatagory(data1) {
+    let data=data1;
+    data.token = sessionStorage.token;
     return axios.post(baseUrl + 'catagory/add', data)
   }
 
   /*获取分类*/
   getCatagory(data) {
+
     return axios.post(baseUrl + 'catagory/get', data)
   }
 
   /*删除分类*/
-  removeCatagory(data) {
+  removeCatagory(data1) {
+    let data=data1;
+    data.token = sessionStorage.token;
     return axios.post(baseUrl + 'catagory/remove', data)
   }
 
   /*修改分类*/
-  updataCatagory(data) {
+  updataCatagory(data1) {
+    let data=data1;
+    data.token = sessionStorage.token;
     return axios.post(baseUrl + 'catagory/updata', data)
   }
 
   /*新增文章*/
-  addArtical(data) {
+  addArtical(data1) {
+    let data=data1;
+    data.token = sessionStorage.token;
     return axios.post(baseUrl + 'artical/add', data)
   }
 
@@ -62,37 +71,50 @@ class Api {
   }
 
   /*编辑文章*/
-  editorArtical(data) {
+  editorArtical(data1) {
+    let data=data1;
+    data.token = sessionStorage.token;
     return axios.post(baseUrl + 'artical/editor', data)
+  }
+
+  /*删除文章*/
+  deleteArtical(data1) {
+    let data=data1;
+    data.token = sessionStorage.token;
+    return axios.post(baseUrl + 'artical/delete', data)
   }
 
   /*根据分类获取文章*/
 
-  getArticalByCatagory(data){
+  getArticalByCatagory(data) {
     return axios.post(baseUrl + 'artical/getByCatagory', data)
   }
 
   /*文章阅读数统计*/
 
-  articalViewsAdd(data){
+  articalViewsAdd(data) {
     return axios.post(baseUrl + 'artical/viewsAdd', data)
   }
 
   /*新增歌单*/
 
-  addMusicList(data){
+  addMusicList(data1) {
+    let data=data1;
+    data.token = sessionStorage.token;
     return axios.post(baseUrl + 'music/add', data)
   }
 
   /*获取歌单*/
 
-  getMusicList(data){
+  getMusicList(data) {
     return axios.post(baseUrl + 'music/get', data)
   }
 
   /*删除歌单*/
 
-  removeMusicList(data){
+  removeMusicList(data1) {
+    let data=data1;
+    data.token = sessionStorage.token;
     return axios.post(baseUrl + 'music/remove', data)
   }
 

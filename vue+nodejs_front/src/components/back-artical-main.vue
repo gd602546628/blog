@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import {Table, Icon, Button} from 'iview';
   import Api from "../api/api"
   export default {
@@ -20,7 +20,7 @@
       'Icon': Icon,
       'i-button': Button
     },
-    props:['current'],
+    props: ['current'],
     data () {
       return {
         total: 1,
@@ -73,16 +73,16 @@
           page: page,
           limit: this.limit
         }).then((data) => {
-          this.data6 = data.data.articals.map((item)=>{
+          this.data6 = data.data.articals.map((item) => {
             return {
-              _id:item._id,
-              catagory:item.catagory.name,
-              catagoryId:item.catagory._id,
-              title:item.title,
-              addTime:new Date(item.addTime).toLocaleString(),
-              views:item.views,
-              discription:item.discription,
-              content:item.content
+              _id: item._id,
+              catagory: item.catagory.name,
+              catagoryId: item.catagory._id,
+              title: item.title,
+              addTime: new Date(item.addTime).toLocaleString(),
+              views: item.views,
+              discription: item.discription,
+              content: item.content
             }
           })
           this.total = data.data.count;
@@ -90,10 +90,19 @@
       },
       editor(index){
         this.currentIndex = index;
-        this.$emit('toEditor',this.data6[index])
+        this.$emit('toEditor', this.data6[index])
       },
       remove(index){
-
+        Api.deleteArtical({
+          id: this.data6[index]._id,
+          token: sessionStorage.token
+        }).then((data)=>{
+            if(data.data.code==0){
+                this.data6.splice(index,1);
+            }else{
+                alert(data.data.message);
+            }
+        })
       }
     },
 

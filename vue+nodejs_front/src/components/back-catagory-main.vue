@@ -99,7 +99,11 @@
       remove(index){
         Api.removeCatagory({id: this.data6[index]._id})
           .then((data) => {
-            this.data6.splice(index, 1)
+            if(data.data.code==0){
+              this.data6.splice(index, 1)
+            }else{
+                alert(data.data.message);
+            }
           })
       }
     },

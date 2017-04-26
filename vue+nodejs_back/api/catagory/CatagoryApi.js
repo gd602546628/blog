@@ -6,7 +6,7 @@
 let express = require('express');
 let router = express.Router();
 let Catagory = require('../../models/Catagory');
-
+let tokenModule = require('../../token/token');
 let responseData = {};
 
 router.use((req, res, next) => {
@@ -57,6 +57,14 @@ router.post('/get', (req, res, next) => {
 /*添加分类*/
 
 router.post('/add', (req, res, next) => {
+    let token = req.body.token;
+    let tokenResult = tokenModule.check(token);
+    if (!tokenResult.success) {
+        responseData.code = 1;
+        responseData.message = tokenResult.message;
+        res.json(responseData);
+        return
+    }
     let name = req.body.name;
     Catagory.findOne({name: name})
         .then((info) => {
@@ -80,6 +88,14 @@ router.post('/add', (req, res, next) => {
 
 /*修改分类*/
 router.post('/updata', (req, res, next) => {
+    let token = req.body.token;
+    let tokenResult = tokenModule.check(token);
+    if (!tokenResult.success) {
+        responseData.code = 1;
+        responseData.message = tokenResult.message;
+        res.json(responseData);
+        return
+    }
     let id = req.body.id;
     let name = req.body.name;
     Catagory.findOne({_id: id})
@@ -124,6 +140,14 @@ router.post('/updata', (req, res, next) => {
 
 /*删除分类*/
 router.post('/remove', (req, res, next) => {
+    let token = req.body.token;
+    let tokenResult = tokenModule.check(token);
+    if (!tokenResult.success) {
+        responseData.code = 1;
+        responseData.message = tokenResult.message;
+        res.json(responseData);
+        return
+    }
     let id = req.body.id;
     Catagory.remove({_id: id}).then(() => {
         responseData.code = 0;

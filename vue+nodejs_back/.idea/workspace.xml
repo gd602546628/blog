@@ -18,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+            <state relative-caret-position="510">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -31,21 +31,36 @@
       <file leaf-file-name="articalApi.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/artical/articalApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="102" column="10" lean-forward="true" selection-start-line="102" selection-start-column="10" selection-end-line="102" selection-end-column="10" />
+            <state relative-caret-position="179">
+              <caret line="256" column="3" lean-forward="false" selection-start-line="256" selection-start-column="3" selection-end-line="263" selection-end-column="5" />
               <folding>
-                <element signature="e#341#2273#0" expanded="false" />
-                <element signature="e#3427#5387#0" expanded="false" />
+                <element signature="e#387#2567#0" expanded="false" />
+                <element signature="e#2620#3664#0" expanded="false" />
+                <element signature="e#3721#5928#0" expanded="false" />
+                <element signature="e#5995#6865#0" expanded="false" />
+                <element signature="e#6926#7425#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="musicApi.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="token.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/token/token.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+              <folding>
+                <marker date="1493195858893" expanded="true" signature="293:553" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="musicApi.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/music/musicApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2463">
-              <caret line="141" column="0" lean-forward="true" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+            <state relative-caret-position="239">
+              <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -54,12 +69,23 @@
       <file leaf-file-name="userApi.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/user/userApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="113" column="4" lean-forward="false" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+            <state relative-caret-position="210">
+              <caret line="98" column="43" lean-forward="false" selection-start-line="98" selection-start-column="43" selection-end-line="98" selection-end-column="43" />
               <folding>
-                <element signature="e#388#1674#0" expanded="false" />
-                <element signature="e#1796#2608#0" expanded="false" />
+                <element signature="e#451#1737#0" expanded="false" />
+                <marker date="1493193976179" expanded="true" signature="2225:2752" ph="{...}" />
+                <marker date="1493193976179" expanded="true" signature="2253:2568" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,8 +93,8 @@
       <file leaf-file-name="catagory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schemas/catagory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+            <state relative-caret-position="63">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,8 +103,8 @@
       <file leaf-file-name="CatagoryApi.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/catagory/CatagoryApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2667">
-              <caret line="127" column="13" lean-forward="false" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
+            <state relative-caret-position="198">
+              <caret line="149" column="5" lean-forward="false" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -106,8 +132,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>findById</find>
-      <find>remove</find>
       <find>populate</find>
+      <find>remove</find>
     </findStrings>
     <dirStrings>
       <dir>E:\github\blog\vue+nodejs_back</dir>
@@ -119,17 +145,19 @@
         <option value="$PROJECT_DIR$/api/catagory/Catagory.js" />
         <option value="$PROJECT_DIR$/schemas/catagory.js" />
         <option value="$PROJECT_DIR$/models/Catagory.js" />
-        <option value="$PROJECT_DIR$/api/catagory/CatagoryApi.js" />
         <option value="$PROJECT_DIR$/models/Artical.js" />
-        <option value="$PROJECT_DIR$/api/user/userApi.js" />
         <option value="$PROJECT_DIR$/schemas/artical.js" />
         <option value="$PROJECT_DIR$/api/music/music.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/schemas/music.js" />
         <option value="$PROJECT_DIR$/schemas/musicList.js" />
         <option value="$PROJECT_DIR$/models/MusicList.js" />
-        <option value="$PROJECT_DIR$/api/music/musicApi.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/api/user/userApi.js" />
+        <option value="$PROJECT_DIR$/token/token.js" />
         <option value="$PROJECT_DIR$/api/artical/articalApi.js" />
+        <option value="$PROJECT_DIR$/api/music/musicApi.js" />
+        <option value="$PROJECT_DIR$/api/catagory/CatagoryApi.js" />
       </list>
     </option>
   </component>
@@ -140,10 +168,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1358" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -160,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -184,58 +211,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="token" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue+nodejs_back" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue+nodejs_back" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="schemas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue+nodejs_back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue+nodejs_back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue+nodejs_back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue+nodejs_back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue+nodejs_back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue+nodejs_back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="music" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,24 +334,25 @@
       <workItem from="1492821456974" duration="8276000" />
       <workItem from="1492993719029" duration="9825000" />
       <workItem from="1493081151081" duration="2758000" />
+      <workItem from="1493175831715" duration="7687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50066000" />
+    <option name="totallyTimeSpent" value="57753000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27818447" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15096252" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31811023" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22047244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918947" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -377,14 +374,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/schemas/artical.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="37" lean-forward="false" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -398,8 +387,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#341#2273#0" expanded="false" />
-            <element signature="e#3427#5387#0" expanded="false" />
+            <element signature="e#387#2567#0" expanded="false" />
+            <element signature="e#2620#3664#0" expanded="false" />
+            <element signature="e#3721#5928#0" expanded="false" />
+            <element signature="e#5995#6865#0" expanded="false" />
+            <element signature="e#6926#7425#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -409,8 +401,9 @@
         <state relative-caret-position="903">
           <caret line="113" column="4" lean-forward="false" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
           <folding>
-            <element signature="e#388#1674#0" expanded="false" />
-            <element signature="e#1796#2608#0" expanded="false" />
+            <element signature="e#451#1737#0" expanded="false" />
+            <marker date="1493193976179" expanded="true" signature="2225:2752" ph="{...}" />
+            <marker date="1493193976179" expanded="true" signature="2253:2568" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -433,7 +426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -481,8 +473,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#341#2273#0" expanded="false" />
-            <element signature="e#3427#5387#0" expanded="false" />
+            <element signature="e#387#2567#0" expanded="false" />
+            <element signature="e#2620#3664#0" expanded="false" />
+            <element signature="e#3721#5928#0" expanded="false" />
+            <element signature="e#5995#6865#0" expanded="false" />
+            <element signature="e#6926#7425#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -492,8 +487,9 @@
         <state relative-caret-position="903">
           <caret line="113" column="4" lean-forward="true" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
           <folding>
-            <element signature="e#388#1674#0" expanded="false" />
-            <element signature="e#1796#2608#0" expanded="false" />
+            <element signature="e#451#1737#0" expanded="false" />
+            <marker date="1493193976179" expanded="true" signature="2225:2752" ph="{...}" />
+            <marker date="1493193976179" expanded="true" signature="2253:2568" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -516,7 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -564,8 +559,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#341#2273#0" expanded="false" />
-            <element signature="e#3427#5387#0" expanded="false" />
+            <element signature="e#387#2567#0" expanded="false" />
+            <element signature="e#2620#3664#0" expanded="false" />
+            <element signature="e#3721#5928#0" expanded="false" />
+            <element signature="e#5995#6865#0" expanded="false" />
+            <element signature="e#6926#7425#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -575,8 +573,9 @@
         <state relative-caret-position="2373">
           <caret line="113" column="4" lean-forward="false" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
           <folding>
-            <element signature="e#388#1674#0" expanded="false" />
-            <element signature="e#1796#2608#0" expanded="false" />
+            <element signature="e#451#1737#0" expanded="false" />
+            <marker date="1493193976179" expanded="true" signature="2225:2752" ph="{...}" />
+            <marker date="1493193976179" expanded="true" signature="2253:2568" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -599,7 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -647,8 +645,9 @@
         <state relative-caret-position="2541">
           <caret line="121" column="33" lean-forward="false" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
           <folding>
-            <element signature="e#388#1674#0" expanded="false" />
-            <element signature="e#1796#2608#0" expanded="false" />
+            <element signature="e#451#1737#0" expanded="false" />
+            <marker date="1493193976179" expanded="true" signature="2225:2752" ph="{...}" />
+            <marker date="1493193976179" expanded="true" signature="2253:2568" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -697,14 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/Catagory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -720,46 +711,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schemas/catagory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/catagory/CatagoryApi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2667">
-          <caret line="127" column="13" lean-forward="false" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/artical/articalApi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="102" column="10" lean-forward="true" selection-start-line="102" selection-start-column="10" selection-end-line="102" selection-end-column="10" />
-          <folding>
-            <element signature="e#341#2273#0" expanded="false" />
-            <element signature="e#3427#5387#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schemas/musicList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,7 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,25 +729,81 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schemas/catagory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/user/userApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="113" column="4" lean-forward="false" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+        <state relative-caret-position="210">
+          <caret line="98" column="43" lean-forward="false" selection-start-line="98" selection-start-column="43" selection-end-line="98" selection-end-column="43" />
           <folding>
-            <element signature="e#388#1674#0" expanded="false" />
-            <element signature="e#1796#2608#0" expanded="false" />
+            <element signature="e#451#1737#0" expanded="false" />
+            <marker date="1493193976179" expanded="true" signature="2225:2752" ph="{...}" />
+            <marker date="1493193976179" expanded="true" signature="2253:2568" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/token/token.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding>
+            <marker date="1493195858893" expanded="true" signature="293:553" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/artical/articalApi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="256" column="3" lean-forward="false" selection-start-line="256" selection-start-column="3" selection-end-line="263" selection-end-column="5" />
+          <folding>
+            <element signature="e#387#2567#0" expanded="false" />
+            <element signature="e#2620#3664#0" expanded="false" />
+            <element signature="e#3721#5928#0" expanded="false" />
+            <element signature="e#5995#6865#0" expanded="false" />
+            <element signature="e#6926#7425#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/music/musicApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2463">
-          <caret line="141" column="0" lean-forward="true" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+        <state relative-caret-position="239">
+          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/catagory/CatagoryApi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="149" column="5" lean-forward="false" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>

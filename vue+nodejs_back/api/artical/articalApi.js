@@ -5,9 +5,8 @@
 let express = require('express');
 let router = express.Router();
 let Artical = require('../../models/Artical');
-
 let responseData = {};
-
+let tokenModule = require('../../token/token');
 router.use((req, res, next) => {
     responseData = {
         code: 0,
@@ -24,6 +23,14 @@ router.post('/add', (req, res, next) => {
     let discription = req.body.discription || "";
     let content = req.body.content;
 
+    let token = req.body.token;
+    let tokenResult = tokenModule.check(token);
+    if (!tokenResult.success) {
+        responseData.code = 1;
+        responseData.message = tokenResult.message;
+        res.json(responseData);
+        return
+    }
 
     if (catagory == undefined) {
         responseData.code = 4;
@@ -129,7 +136,14 @@ router.post('/editor', (req, res, next) => {
     let discription = req.body.discription || "";
     let content = req.body.content;
     let id = req.body.id;
-
+    let token = req.body.token;
+    let tokenResult = tokenModule.check(token);
+    if (!tokenResult.success) {
+        responseData.code = 1;
+        responseData.message = tokenResult.message;
+        res.json(responseData);
+        return
+    }
     if (catagory == undefined) {
         responseData.code = 4;
         responseData.message = 'catagory字段不能为空';
@@ -239,5 +253,26 @@ router.post('/viewsAdd', (req, res, next) => {
     })
 })
 
+router.post('/delete', (req, res, next) => {
+    let token = req.body.token;
+    let tokenResult = tokenModule.check(token);
+    if (!tokenResult.success) {
+        responseData.code = 1;
+        responseData.message = tokenResult.message;
+        res.json(responseData);
+        return
+    }
+
+
+    let id = req.body.id;
+
+    Artical.remove({_id: id}).then(() => {
+        responseData.code = 0;
+        responseData.message = '删除成功';
+        res.json(responseData);
+        return
+    })
+
+})
 
 module.exports = router;

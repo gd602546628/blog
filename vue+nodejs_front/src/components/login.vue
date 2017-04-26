@@ -19,14 +19,11 @@
             <Button type="primary" @click="login()">登录</Button>
           </Form-item>
 
-          <Form-item>
-            <Button type="primary" @click="showRegister()">注册</Button>
-          </Form-item>
         </el-form>
       </div>
     </Card>
 
-    <Card v-show="userState==1">
+   <!-- <Card v-show="userState==1">
       <div class="login-wrap">
         <el-form ref="formInline" :model="formInline" :rules="ruleInline">
           <p class="tittle">用户注册</p>
@@ -64,7 +61,7 @@
         <p class="welcom">你好，欢迎光临我的博客</p>
         <Button type="primary" @click="logout()">退出</Button>
       </div>
-    </Card>
+    </Card>-->
 
 
   </div>
@@ -116,17 +113,19 @@
           password: this.formInline.password
         }).then((data) => {
           if (data.data.code == 0) {
-            this.userState = 2;
             this.errorMessage.show = false;
             this.loginUser = data.data.userInfo;
-            sessionStorage.userInfo = JSON.stringify(this.loginUser)
+            sessionStorage.userInfo = JSON.stringify(this.loginUser);
+            sessionStorage.token = data.data.token;
+            window.location.reload();
           } else {
             this.errorMessage.show = true;
             this.errorMessage.message = data.data.message;
           }
         })
       },
-      logout(){
+
+    /*  logout(){
         delete sessionStorage.userInfo;
         this.userState = 0;
       },
@@ -151,7 +150,7 @@
             this.errorMessage.message = data.data.message
           }
         })
-      }
+      }*/
     },
 
     created(){

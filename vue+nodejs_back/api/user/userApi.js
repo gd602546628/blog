@@ -6,7 +6,7 @@
 let express = require('express');
 let router = express.Router();
 let User = require('../../models/User');
-
+let tokenModule = require('../../token/token');
 let responseData = {};
 
 router.use((req, res, next) => {
@@ -21,6 +21,7 @@ router.use((req, res, next) => {
  * @params{
  *  username,
  *  password
+ *   repassword
  * }
  * */
 router.post('/register', (req, res, next) => {
@@ -70,14 +71,16 @@ router.post('/register', (req, res, next) => {
  *  @params{
  *  username,
  *  password,
- *  repassword
+ *
  * }
  * */
 router.post('/login', (req, res, next) => {
 
+
+
+
     let username = req.body.username;
     let password = req.body.password;
-
     if (username == '' || password == '') {
         responseData.code = 1;
         responseData.message = '密码或用户名不能为空';
@@ -89,9 +92,11 @@ router.post('/login', (req, res, next) => {
             username: username
         }).then((userInfo) => {
             if (userInfo) {
+                let token=tokenModule.getToken(userInfo);
                 responseData.code = 0;
                 responseData.message = '登录成功';
-                responseData.userInfo = userInfo;
+                responseData.userInfo =userInfo;
+                responseData.token = token;
                 res.json(responseData);
                 return
             } else {

@@ -13,6 +13,11 @@
           分类
         </Menu-item>
 
+        <Menu-item name="lab">
+          <Icon type="ios-navigate"></Icon>
+         实验室
+        </Menu-item>
+
         <Menu-item name="about">
           <Icon type="ios-navigate"></Icon>
           关于

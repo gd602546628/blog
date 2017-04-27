@@ -2,8 +2,8 @@
   <div class="back-catagory">
     <el-menu mode="horizontal" active-name="1" v-on:on-select="select">
       <div class="layout-assistant">
-        <Menu-item name="1">查看分类</Menu-item>
-        <Menu-item name="2">添加分类</Menu-item>
+        <Menu-item name="1">demo列表</Menu-item>
+        <Menu-item name="2">添加demo</Menu-item>
       </div>
     </el-menu>
 
@@ -17,7 +17,7 @@
 <script>
   import {Menu, MenuItem} from 'iview';
   import Main from "../components/back-catagory-main.vue";
-  import Add from  "../components/back-catagory-add.vue";
+  import Add from  "../components/back-laboratory-add.vue";
   export default {
     components: {
       'el-menu': Menu,

@@ -11,6 +11,8 @@ import Catagory from '@/page/Catagory';
 import CataArtical from '@/components/catagory-artical';
 import backMusic from '@/components/back-music';
 import about from '@/page/about';
+import fontLab from '@/components/lab';
+import backLab from '@/components/back-laboratory'
 Vue.use(Router)
 
 export default new Router({
@@ -45,7 +47,12 @@ export default new Router({
           path:'about',
           component:about,
           name:'about'
-        }
+        },
+        {
+          path:'lab',
+          component:fontLab,
+          name:'lab'
+        },
       ]
     },
     {
@@ -72,7 +79,7 @@ export default new Router({
         },
         {
           path: 'laboratory',
-          component: backMusic,
+          component: backLab,
         },
       ]
     },

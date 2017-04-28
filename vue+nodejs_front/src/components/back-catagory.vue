@@ -17,7 +17,7 @@
 <script>
   import {Menu, MenuItem} from 'iview';
   import Main from "../components/back-catagory-main.vue";
-  import Add from  "../components/back-catagory-add.vue";
+  import Add from  "../components/back-laboratory-add.vue";
   export default {
     components: {
       'el-menu': Menu,

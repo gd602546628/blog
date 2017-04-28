@@ -87,6 +87,20 @@
       })
     },
 
+    watch:{
+        $route(){
+          Api.getArticalByCatagory({
+            page: 1,
+            limit: this.limit,
+            catagoryId:this.$route.query.id
+          }).then((data) => {
+            this.articalList = data.data.articals;
+            this.total = data.data.count;
+          })
+        }
+    }
+
+
   }
 
 </script>

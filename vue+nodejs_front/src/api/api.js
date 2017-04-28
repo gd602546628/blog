@@ -12,7 +12,7 @@ if (product) {
 }
 class Api {
   constructor() {
-
+    this.host = 'http://172.31.60.66:8888'
   }
 
   /*注册*/
@@ -33,7 +33,7 @@ class Api {
   /*添加分类*/
 
   AddCatagory(data1) {
-    let data=data1;
+    let data = data1;
     data.token = sessionStorage.token;
     return axios.post(baseUrl + 'catagory/add', data)
   }
@@ -46,21 +46,21 @@ class Api {
 
   /*删除分类*/
   removeCatagory(data1) {
-    let data=data1;
+    let data = data1;
     data.token = sessionStorage.token;
     return axios.post(baseUrl + 'catagory/remove', data)
   }
 
   /*修改分类*/
   updataCatagory(data1) {
-    let data=data1;
+    let data = data1;
     data.token = sessionStorage.token;
     return axios.post(baseUrl + 'catagory/updata', data)
   }
 
   /*新增文章*/
   addArtical(data1) {
-    let data=data1;
+    let data = data1;
     data.token = sessionStorage.token;
     return axios.post(baseUrl + 'artical/add', data)
   }
@@ -72,14 +72,14 @@ class Api {
 
   /*编辑文章*/
   editorArtical(data1) {
-    let data=data1;
+    let data = data1;
     data.token = sessionStorage.token;
     return axios.post(baseUrl + 'artical/editor', data)
   }
 
   /*删除文章*/
   deleteArtical(data1) {
-    let data=data1;
+    let data = data1;
     data.token = sessionStorage.token;
     return axios.post(baseUrl + 'artical/delete', data)
   }
@@ -99,7 +99,7 @@ class Api {
   /*新增歌单*/
 
   addMusicList(data1) {
-    let data=data1;
+    let data = data1;
     data.token = sessionStorage.token;
     return axios.post(baseUrl + 'music/add', data)
   }
@@ -113,9 +113,34 @@ class Api {
   /*删除歌单*/
 
   removeMusicList(data1) {
-    let data=data1;
+    let data = data1;
     data.token = sessionStorage.token;
     return axios.post(baseUrl + 'music/remove', data)
+  }
+
+
+  /*添加demo*/
+  addDemo(data) {
+    return axios.post(baseUrl + 'demo/upload', data)
+  }
+
+  /*获取Demo*/
+  getDemo(data) {
+    return axios.post(baseUrl + 'demo/get', data)
+  }
+
+  /*删除Demo*/
+
+  deleteDemo(data1) {
+    let data = data1;
+    data.token = sessionStorage.token;
+    return axios.post(baseUrl + 'demo/delete', data)
+  }
+
+  /*根据ID获取Demo*/
+
+  getDemoById(data){
+    return axios.post(baseUrl + 'demo/getById', data)
   }
 
 }

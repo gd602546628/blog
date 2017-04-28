@@ -37,6 +37,7 @@
             <iframe width="100%" height="400" class="share_self" frameborder="0" scrolling="no"
                     src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=400&fansRow=1&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2607676964&verifier=fe5f84f0&dpc=1"></iframe>
           </Card>
+            <catagory-card></catagory-card>
         </div>
       </div>
 
@@ -52,10 +53,11 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import catagoryCard from '../components/catagoryCard.vue'
   export default {
     name: 'tab',
     components: {
-
+        'catagory-card':catagoryCard
     },
     data () {
       return {

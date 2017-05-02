@@ -1,22 +1,21 @@
 <template>
   <Card class="artical" v-if="currentArtical">
-     <div >
-       <h1 class="tittle">{{currentArtical.title}}</h1>
-       <div class="top">
-         <div v-if="currentArtical.catagory">分类：<i>{{currentArtical.catagory.name}}</i></div>
-         <div>添加时间：<i>{{dataFrom(currentArtical.addTime)}}</i></div>
-         <div>阅读量：<i>{{currentArtical.views}}</i></div>
-       </div>
-       <div class="discription" v-show="currentArtical.discription">
-         <p class="label">简介</p>
-         <div>{{currentArtical.discription}}</div>
-       </div>
-       <div class="content">
-         <p class="label">正文</p>
-         <div v-html="currentArtical.content" class="artical-content"></div>
-       </div>
-     </div>
-
+    <div>
+      <h1 class="tittle">{{currentArtical.title}}</h1>
+      <div class="top">
+        <div v-if="currentArtical.catagory">分类：<i>{{currentArtical.catagory.name}}</i></div>
+        <div>添加时间：<i>{{dataFrom(currentArtical.addTime)}}</i></div>
+        <div>阅读量：<i>{{currentArtical.views}}</i></div>
+      </div>
+      <div class="discription" v-show="currentArtical.discription">
+        <p class="label">简介</p>
+        <div>{{currentArtical.discription}}</div>
+      </div>
+      <div class="content">
+        <p class="label">正文</p>
+        <div v-html="currentArtical.content" class="artical-content"></div>
+      </div>
+    </div>
   </Card>
 </template>
 
@@ -29,16 +28,16 @@
       }
     },
     methods: {
-        dataFrom(a){
-            return new Date(a).toLocaleString()
-        }
+      dataFrom(a){
+        return new Date(a).toLocaleString()
+      }
     },
     created (){
-        Api.getArtical({id:this.$route.query.id}).then((data)=>{
-            this.currentArtical=data.data.artical
-        })
+      Api.getArtical({id: this.$route.query.id}).then((data) => {
+        this.currentArtical = data.data.artical
+      })
 
-      Api.articalViewsAdd({id:this.$route.query.id}).then((data)=>{
+      Api.articalViewsAdd({id: this.$route.query.id}).then((data) => {
 
       })
 
@@ -49,7 +48,7 @@
 <style lang='scss' rel='stylesheet/scss'>
   .artical {
     position: relative;
-    margin-bottom:30px;
+    margin-bottom: 30px;
     .tittle {
       text-align: center;
       font-size: 40px;

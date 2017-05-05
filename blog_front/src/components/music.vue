@@ -132,8 +132,8 @@
     cursor: pointer;
     font-size: 30px;
     z-index: 10;
-    background: #ffffff;
-    box-shadow: 3px 0px 2px #dfdfdf;
+   /* background: #ffffff;*/
+  /*  box-shadow: 3px 0px 2px #dfdfdf;*/
   }
 
   .music-wrap {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tabs-wrap">
-      <div class="tabs-background"></div>
+      <div class="tabs-background" :class="{star:theme==1}"></div>
       <div class="tabs-contant">
         <ul class="tabs">
           <li @click="select('home')">
@@ -22,7 +22,7 @@
           </li>
         </ul>
       </div>
-      <div class="lines">
+      <div class="lines" :class="{star:theme==1}">
         {{lines}}
       </div>
     </div>
@@ -35,10 +35,10 @@
         </div>
 
         <div class="right-content">
-          <Card class="weibo">
-            <iframe width="100%" height="400" class="share_self" frameborder="0" scrolling="no"
-                    src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=400&fansRow=1&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2607676964&verifier=fe5f84f0&dpc=1"></iframe>
-          </Card>
+          <!--  <Card class="weibo">
+              <iframe width="100%" height="400" class="share_self" frameborder="0" scrolling="no"
+                      src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=400&fansRow=1&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2607676964&verifier=fe5f84f0&dpc=1"></iframe>
+            </Card>-->
           <catagory-card></catagory-card>
         </div>
       </div>
@@ -63,6 +63,7 @@
       return {
         currentRoute: 'home',
         lines: '',
+        theme: localStorage.theme || 1
       }
     },
     methods: {
@@ -91,6 +92,7 @@
           await fn()
         }
       }
+
       animation();
       this.currentRoute = this.$route.name;
     }
@@ -103,9 +105,9 @@
 <style lang="scss" rel="stylesheet/scss" scoped>
   .tabs-wrap {
     height: 650px;
-    .tabs-background{
+    .tabs-background {
       position: absolute;
-      top:0;
+      top: 0;
       left: 0;
       width: 100%;
       height: 650px;
@@ -113,7 +115,11 @@
       background-size: cover;
       background-position: bottom;
       z-index: -1;
-     opacity: 0.7;
+      opacity: 0.7;
+      &.star {
+        opacity: 0.3;
+
+      }
     }
 
     .lines {
@@ -122,6 +128,11 @@
       text-align: center;
       line-height: 400px;
       font-size: 40px;
+      font-weight: bold;
+      &.star {
+        color: #ffffff;
+        text-shadow:4px 4px 4px #000000;
+      }
     }
     .tabs-contant {
       width: 100%;
@@ -157,18 +168,6 @@
   .content-wrap {
     max-width: 80%;
     margin: 0 auto;
-  /*  .view-background{
-      background-image:url('../assets/4.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: bottom;
-      position: fixed;
-      top:0;
-      left: 0;
-      right: 0;
-      height: 1000px;
-      z-index: -1;
-    }*/
     .u_wrap {
       margin-top: 50px;
     }

@@ -1,5 +1,5 @@
 <template>
-  <Card class="artical" v-if="currentArtical">
+  <Card class="artical" v-if="currentArtical" :class="{star:theme==1,dot:theme==2}">
     <div>
       <h1 class="tittle">{{currentArtical.title}}</h1>
       <div class="top">
@@ -24,7 +24,8 @@
   export default  {
     data(){
       return {
-        currentArtical: {}
+        currentArtical: {},
+        theme: localStorage.theme || 1
       }
     },
     methods: {
@@ -49,6 +50,14 @@
   .artical {
     position: relative;
     margin-bottom: 30px;
+    &.star {
+      background: rgba(0, 0, 0, 0.3);
+      border-color: black;
+      color:#ccc;
+      &:hover{
+        border-color: black;
+      }
+    }
     .tittle {
       text-align: center;
       font-size: 40px;

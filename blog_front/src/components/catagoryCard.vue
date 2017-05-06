@@ -1,7 +1,7 @@
 <template>
-  <Card class="catagory-card">
+  <Card class="catagory-card" :class="{star:theme==1}">
     <h3>文章分类</h3>
-    <p v-for="(item,index) in catagoryList" class="name" @click="catagoryArtical(item)">
+    <p v-for="(item,index) in catagoryList" class="name" @click="catagoryArtical(item)" >
       {{item.name}}
     </p>
     <p class="more" @click="more">更多分类......</p>
@@ -13,44 +13,53 @@
   export default{
     data(){
       return {
-          catagoryList:[]
+        catagoryList: [],
+        theme: localStorage.theme || 1
       }
     },
 
-    methods:{
+    methods: {
       more(){
-          this.$router.push('catagory')
+        this.$router.push('catagory')
       },
       catagoryArtical(item){
-          this.$router.push({path:'cataArtical',query:{id:item._id}})
+        this.$router.push({path: 'cataArtical', query: {id: item._id}})
       }
     },
     created(){
-        Api.getCatagory({
-            page:1,
-            limit:5
-        }).then((data)=>{
-            this.catagoryList = data.data.catagorys
-        })
+      Api.getCatagory({
+        page: 1,
+        limit: 5
+      }).then((data) => {
+        this.catagoryList = data.data.catagorys
+      })
     }
   }
 </script>
 
 <style lang='scss' rel='stylesheet/scss' scoped>
-  .catagory-card{
+  .catagory-card {
     display: flex;
     align-items: center;
-    margin-top:30px;
-    h3{
+    &:hover{
+      transform: translateY(-5px);
+      border-color: #ccc !important;
+    }
+    &.star{
+      background: rgba(0,0,0,0.3) !important;
+      color: #ccc;
+      border-color: black;
+    }
+    h3 {
       margin-bottom: 20px;
     }
-    .name{
+    .name {
       font-size: 16px;
       padding-bottom: 10px;
       cursor: pointer;
     }
 
-    .more{
+    .more {
       height: 40px;
       line-height: 40px;
       cursor: pointer;

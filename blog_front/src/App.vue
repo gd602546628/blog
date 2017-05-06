@@ -64,7 +64,7 @@
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     .footer {
-      background: #232323;
+      background: black;
       height: 100px;
       color: #ffffff;
       margin-top: 300px;

@@ -1,7 +1,7 @@
 <template>
   <div class="catagory">
     <div class="catagory-item" v-for="(item,index) in catagoryList" @click="getArtical(item)">
-      <Card class="catagory-item-card">
+      <Card class="catagory-item-card" :class="{star:theme==1}">
         <p>{{item.name}}</p>
       </Card>
     </div>
@@ -13,7 +13,8 @@
   export default{
     data(){
       return {
-        catagoryList: []
+        catagoryList: [],
+        theme:localStorage.theme||1
       }
     },
     methods: {
@@ -43,6 +44,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        &.star{
+          background:rgba(0,0,0,0.3);
+          color: #ffffff;
+          border-color: black;
+          &:hover{
+            transform: translateY(-5px);
+            border-color: #ffffff;
+          }
+        }
       }
     }
   }

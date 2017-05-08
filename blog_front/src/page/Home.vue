@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <artical-list v-for="(item,index) in articalList" :artical="item"></artical-list>
+    <artical-list v-for="(item,index) in articalList" :artical="item" :key="index"></artical-list>
 
     <Page
       :total="total"

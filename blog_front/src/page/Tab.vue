@@ -20,6 +20,20 @@
             <Icon type="android-contact" class="icon"></Icon>
             关于
           </li>
+          <li @mouseenter="showSkin()" @mouseleave="hideSkin()">
+            <Icon type="tshirt" class="icon"></Icon>
+            换肤
+           <transition name="fromTop">
+             <div class="skin" v-show="skinShow" @mouseenter="showSkin()">
+               <p @click="changeSkin('dot')">
+                 <Icon type="ios-sunny-outline"></Icon>
+               </p>
+               <p @click="changeSkin('star')">
+                 <Icon type="ios-moon-outline"></Icon>
+               </p>
+             </div>
+           </transition>
+          </li>
         </ul>
       </div>
       <div class="lines" :class="{star:theme==1}">
@@ -28,7 +42,6 @@
     </div>
 
     <div class="content-wrap">
-      <div class="view-background"></div>
       <div class="content">
         <div class="view">
           <router-view></router-view>
@@ -42,9 +55,9 @@
           <catagory-card></catagory-card>
         </div>
       </div>
-      <div class="u_wrap">
-        <div id="uyan_frame"></div>
-      </div>
+      <!--  <div class="u_wrap">
+          <div id="uyan_frame"></div>
+        </div>-->
     </div>
 
   </div>
@@ -63,13 +76,36 @@
       return {
         currentRoute: 'home',
         lines: '',
-        theme: localStorage.theme || 1
+        skinShow: false,
+        timer: null
+      }
+    },
+
+    computed: {
+      theme(){
+        return this.$store.state.theme
       }
     },
     methods: {
+
       select(name){
         this.$router.push(name)
+      },
+
+      changeSkin(theme){
+        this.$store.commit(theme)
+      },
+
+      showSkin(){
+        clearTimeout(this.timer);
+        this.skinShow = true;
+      },
+      hideSkin(){
+        this.timer = setTimeout(() => {
+          this.skinShow = false;
+        }, 500)
       }
+
     },
 
     created(){
@@ -94,7 +130,6 @@
       }
 
       animation();
-      this.currentRoute = this.$route.name;
     }
 
 
@@ -129,9 +164,10 @@
       line-height: 400px;
       font-size: 40px;
       font-weight: bold;
+      text-shadow: 4px 4px 4px #eee;
       &.star {
         color: #ffffff;
-        text-shadow:4px 4px 4px #000000;
+        text-shadow: 4px 4px 4px #000000;
       }
     }
     .tabs-contant {
@@ -153,6 +189,25 @@
           height: 100%;
           width: 100px;
           text-align: center;
+          position: relative;
+          .skin {
+            cursor: pointer;
+            position: absolute;
+            top:40px;
+            left: 0;
+            width: 100px;
+            transition:all 0.3s ease-in-out;
+            &.fromTop-enter{
+               transform: translateY(-100px);
+            }
+            &.fromTop-leave-active{
+              transform: translateY(-100px);
+            }
+            p {
+              background: rgba(0, 0, 0, 0.7);
+              font-size: 30px;
+            }
+          }
           .icon {
             margin-right: 10px;
           }

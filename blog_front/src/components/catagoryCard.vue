@@ -14,10 +14,14 @@
     data(){
       return {
         catagoryList: [],
-        theme: localStorage.theme || 1
       }
     },
 
+    computed: {
+      theme(){
+        return this.$store.state.theme
+      }
+    },
     methods: {
       more(){
         this.$router.push('catagory')

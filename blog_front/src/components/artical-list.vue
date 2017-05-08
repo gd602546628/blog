@@ -36,10 +36,14 @@
     name: 'home',
     data () {
       return {
-        theme: localStorage.theme || 1
       }
     },
     props:['artical'],
+    computed: {
+      theme(){
+        return this.$store.state.theme
+      }
+    },
     methods: {
       dataFrom(value){
         return new Date(value).toLocaleString()

@@ -139,12 +139,11 @@
   .music-wrap {
 
     &.move-enter, &.move-leave-active {
-      transition: all 0.3s ease;
+      transition: all 0.3s ease-in-out;
       transform: translateX(-100%);
     }
-
     &.move-enter-active, &.move-leave {
-      transition: all 0.3s ease;
+      transition: all 0.3s ease-in-out;
     }
 
     height: 100%;

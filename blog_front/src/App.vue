@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <canvas id="space" ref="space"></canvas>
     <music></music>
+    <cavans-star class="cavans" v-if="theme==1"></cavans-star>
+    <cavans-dot class="cavans" v-if="theme==0"></cavans-dot>
     <router-view></router-view>
     <div class="footer">
       <div class="footer-background"></div>
@@ -14,16 +15,25 @@
 
 <script type="text/ecmascript-6">
   import music from './components/music.vue';
-  import canvas from './class/cavans'
+  import star from './components/cavans-star.vue'
+  import dot from './components/cavans-dot.vue'
   export default {
     name: 'app',
     components: {
-      music: music
+      music: music,
+      'cavans-star': star,
+      'cavans-dot': dot
     },
 
-   mounted(){
-        canvas()
-   }
+    computed: {
+      theme(){
+
+        return this.$store.state.theme
+      }
+    },
+    mounted(){
+
+    }
   }
 </script>
 
@@ -89,7 +99,7 @@
       }
     }
 
-    #space{
+    .cavans {
       position: fixed;
       top: 0;
       bottom: 0;

@@ -5,8 +5,8 @@
 
 
 /*交点线*/
-/*export default function () {
-  var canvas = document.getElementById("space");
+function dot(el) {
+  var canvas = el;
   var ctx = canvas.getContext("2d");
   var cw = canvas.width = window.innerWidth,
     cx = cw / 2;
@@ -154,18 +154,20 @@
   function randomIntFromInterval(mn, mx) {
     return ~~(Math.random() * (mx - mn + 1) + mn);
   }
-}*/
+}
 
 
 /*星空*/
-export default function(){
-  window.requestAnimFrame = (function(){   return  window.requestAnimationFrame})();
-  var canvas = document.getElementById("space");
+function star(el) {
+  window.requestAnimFrame = (function () {
+    return window.requestAnimationFrame
+  })();
+  var canvas = el;
   var c = canvas.getContext("2d");
 
   var numStars = 1900;
-  var radius = '0.'+Math.floor(Math.random() * 9) + 1  ;
-  var focalLength = canvas.width *2;
+  var radius = '0.' + Math.floor(Math.random() * 9) + 1;
+  var focalLength = canvas.width * 2;
   var warp = 0;
   var centerX, centerY;
 
@@ -176,55 +178,56 @@ export default function(){
 
   initializeStars();
 
-  function executeFrame(){
+  function executeFrame() {
 
-    if(animate)
+    if (animate)
       requestAnimFrame(executeFrame);
     moveStars();
     drawStars();
   }
 
-  function initializeStars(){
+  function initializeStars() {
     centerX = canvas.width / 2;
     centerY = canvas.height / 2;
 
     stars = [];
-    for(i = 0; i < numStars; i++){
+    for (i = 0; i < numStars; i++) {
       star = {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         z: Math.random() * canvas.width,
-        o: '0.'+Math.floor(Math.random() * 99) + 1
+        o: '0.' + Math.floor(Math.random() * 99) + 1
       };
       stars.push(star);
     }
   }
 
-  function moveStars(){
-    for(i = 0; i < numStars; i++){
+  function moveStars() {
+    for (i = 0; i < numStars; i++) {
       star = stars[i];
       star.z--;
 
-      if(star.z <= 0){
+      if (star.z <= 0) {
         star.z = canvas.width;
       }
     }
   }
 
-  function drawStars(){
+  function drawStars() {
     var pixelX, pixelY, pixelRadius;
 
     // Resize to the screen
-    if(canvas.width != window.innerWidth || canvas.width != window.innerWidth){
+    if (canvas.width != window.innerWidth || canvas.width != window.innerWidth) {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       initializeStars();
     }
-    if(warp==0)
-    {c.fillStyle = "rgba(0,10,20,1)";
-      c.fillRect(0,0, canvas.width, canvas.height);}
-    c.fillStyle = "rgba(209, 255, 255, "+radius+")";
-    for(i = 0; i < numStars; i++){
+    if (warp == 0) {
+      c.fillStyle = "rgba(0,10,20,1)";
+      c.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    c.fillStyle = "rgba(209, 255, 255, " + radius + ")";
+    for (i = 0; i < numStars; i++) {
       star = stars[i];
 
       pixelX = (star.x - centerX) * (focalLength / star.z);
@@ -234,11 +237,17 @@ export default function(){
       pixelRadius = 1 * (focalLength / star.z);
 
       c.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
-      c.fillStyle = "rgba(209, 255, 255, "+star.o+")";
+      c.fillStyle = "rgba(209, 255, 255, " + star.o + ")";
       //c.fill();
     }
   }
 
 
   executeFrame();
+}
+
+
+export {
+  star,
+  dot
 }

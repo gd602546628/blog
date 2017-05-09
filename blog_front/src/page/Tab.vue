@@ -23,16 +23,16 @@
           <li @mouseenter="showSkin()" @mouseleave="hideSkin()">
             <Icon type="tshirt" class="icon"></Icon>
             换肤
-           <transition name="fromTop">
-             <div class="skin" v-show="skinShow" @mouseenter="showSkin()">
-               <p @click="changeSkin('dot')">
-                 <Icon type="ios-sunny-outline"></Icon>
-               </p>
-               <p @click="changeSkin('star')">
-                 <Icon type="ios-moon-outline"></Icon>
-               </p>
-             </div>
-           </transition>
+            <transition name="fromTop">
+              <div class="skin" v-show="skinShow" @mouseenter="showSkin()">
+                <p @click="changeSkin('dot')">
+                  <Icon type="ios-sunny-outline"></Icon>
+                </p>
+                <p @click="changeSkin('star')">
+                  <Icon type="ios-moon-outline"></Icon>
+                </p>
+              </div>
+            </transition>
           </li>
         </ul>
       </div>
@@ -60,13 +60,18 @@
         </div>-->
     </div>
 
+    <transition name="showTop">
+      <div class="toTop" @click="toTop" ref="toTop" v-show="showTop">
+      </div>
+    </transition>
   </div>
 
 
 </template>
 
 <script type="text/ecmascript-6">
-  import catagoryCard from '../components/catagoryCard.vue'
+  import catagoryCard from '../components/catagoryCard.vue';
+  import animation from '../class/animation/animation'
   export default {
     name: 'tab',
     components: {
@@ -77,7 +82,8 @@
         currentRoute: 'home',
         lines: '',
         skinShow: false,
-        timer: null
+        timer: null,
+        showTop:false
       }
     },
 
@@ -104,6 +110,11 @@
         this.timer = setTimeout(() => {
           this.skinShow = false;
         }, 500)
+      },
+
+      toTop(){
+        let el = document.body;
+        animation.animation(el, {scrollTop: 0}, 300, 'Cubic.easeOut')
       }
 
     },
@@ -128,8 +139,21 @@
           await fn()
         }
       }
-
       animation();
+    },
+
+    mounted(){
+      let body=document.body
+       let _this=this
+      body.onscroll=function(){
+        let height=document.body.clientHeight-200;
+        let scrollTop=body.scrollTop
+        if(scrollTop>=height){
+            _this.showTop=true
+        }else{
+          _this.showTop=false
+        }
+      }
     }
 
 
@@ -193,14 +217,11 @@
           .skin {
             cursor: pointer;
             position: absolute;
-            top:40px;
+            top: 40px;
             left: 0;
             width: 100px;
-            transition:all 0.3s ease-in-out;
-            &.fromTop-enter{
-               transform: translateY(-100px);
-            }
-            &.fromTop-leave-active{
+            transition: all 0.3s ease-in-out;
+            &.fromTop-enter ,&.fromTop-leave-active{
               transform: translateY(-100px);
             }
             p {
@@ -245,7 +266,23 @@
     }
   }
 
-
+  .toTop {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    width: 100px;
+    height: 900px;
+    cursor: pointer;
+    background-image: url('../assets/scroll.png');
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
+    &.showTop-enter{
+      transform: translateY(-900px);
+    }
+    &.showTop-leave-active{
+      transform: translateY(-900px);
+    }
+  }
 </style>
 
 

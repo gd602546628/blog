@@ -76,9 +76,6 @@ router.post('/register', (req, res, next) => {
  * */
 router.post('/login', (req, res, next) => {
 
-
-
-
     let username = req.body.username;
     let password = req.body.password;
     if (username == '' || password == '') {
@@ -92,10 +89,10 @@ router.post('/login', (req, res, next) => {
             username: username
         }).then((userInfo) => {
             if (userInfo) {
-                let token=tokenModule.getToken(userInfo);
+                let token = tokenModule.getToken(userInfo);
                 responseData.code = 0;
                 responseData.message = '登录成功';
-                responseData.userInfo =userInfo;
+                responseData.userInfo = userInfo;
                 responseData.token = token;
                 res.json(responseData);
                 return
@@ -105,6 +102,10 @@ router.post('/login', (req, res, next) => {
                 res.json(responseData);
                 return
             }
+        }).catch(err => {
+            responseData.code = 1;
+            responseData.message = err;
+            res.json(responseData);
         })
     }
 

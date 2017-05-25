@@ -8,7 +8,7 @@ let product = false;
 if (product) {
 
 } else {
-  baseUrl = 'http://172.31.60.66:8888/api/'
+  baseUrl = 'http://172.31.61.39:8888/api/'
 }
 class Api {
   constructor() {

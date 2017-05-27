@@ -2,8 +2,8 @@
   "name": "blog",
   "version": "0.0.1",
   "scripts": {
-    "build": "babel test/ -d build/ --sourse-maps",
-    "start": "node build/app.js"
+    "build": "babel src/ -d build/ --sourse-maps",
+    "start": "node build/server.js"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",

@@ -71,7 +71,7 @@
        color: #ccc;
       border-color: black;
       &:hover{
-        border-color: black;
+        border-color: #ffffff;
       }
     }
     .button-wrap {

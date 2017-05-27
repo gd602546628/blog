@@ -1,19 +1,30 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Tab from '@/page/Tab'
-import back from "@/page/back"
-import backUser from '@/components/back-user'
-import backCategory from '@/components/back-catagory';
-import backArtical from "@/components/back-artical";
-import Home from '@/page/Home';
-import artical from '@/components/artical';
-import Catagory from '@/page/Catagory';
-import CataArtical from '@/components/catagory-artical';
-import backMusic from '@/components/back-music';
-import about from '@/page/about';
-import fontLab from '@/components/lab';
-import backLab from '@/components/back-laboratory';
-import labDetail from '@/components/demo-detail';
+
+import Tab from '@/page/front/Tab'//tab页，前台一级页
+import about from '@/page/front/about';//前台二级页，关于页
+import Home from '@/page/front/Home';//前台二级页，首页
+import Catagory from '@/page/front/Catagory';//前台二级页，分类页
+import artical from '@/page/front/artical';//前台二级页，文章页
+import CataArtical from '@/page/front/catagory-artical';//前台二级页，分类文章页
+import fontLab from '@/page/front/lab';//前台二级页，实验室页
+//import labDetail from '@/components/demo-detail';
+
+
+import back from "@/page/back/back";//后台一级页
+import backArtical from "@/page/back/back-artical";//后台二级页，文章管理页
+import backUser from '@/page/back/back-user'//后台二级页，用户管理页
+import backCategory from '@/page/back/back-catagory';//后台二级页，分类管理页
+import backMusic from '@/page/back/back-music';//后台二级页，音乐管理页
+import backLab from '@/page/back//back-laboratory';//后台二级页，实验室管理页
+
+
+
+
+
+
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -54,11 +65,11 @@ export default new Router({
           component:fontLab,
           name:'lab'
         },
-        {
+        /*{
           path:'labDetail',
           component:labDetail,
           name:'labDetail'
-        }
+        }*/
       ]
     },
     {
@@ -69,15 +80,18 @@ export default new Router({
       children: [
         {
           path: 'user',
-          component: backUser
+          component: backUser,
+          name:'user'
         },
         {
           path: 'category',
           component: backCategory,
+          name:'category'
         },
         {
           path: 'artical',
           component: backArtical,
+          name:'artical'
         },
         {
           path: 'music',
@@ -86,6 +100,7 @@ export default new Router({
         {
           path: 'laboratory',
           component: backLab,
+          name:'laboratory'
         },
 
       ]

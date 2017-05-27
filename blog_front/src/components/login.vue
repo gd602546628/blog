@@ -62,17 +62,15 @@
         <Button type="primary" @click="logout()">退出</Button>
       </div>
     </Card>-->
-
-
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import {Form, FormItem, Input, Icon, Alert, Card} from 'iview';
-  import Api from '../api/api';
-  import back from '../page/back';
-  import router from '../router/index';
+  import Api from '@/api/api';
+  import router from '@/router/index';
   export default {
+
     components: {
       'el-form': Form,
       'Form-item': FormItem,

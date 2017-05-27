@@ -14,9 +14,9 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import music from './components/music.vue';
-  import star from './components/cavans-star.vue'
-  import dot from './components/cavans-dot.vue'
+  import music from '@/components/music.vue';
+  import star from '@/components/cavans-star.vue'
+  import dot from '@/components/cavans-dot.vue'
   export default {
     name: 'app',
     components: {
@@ -27,7 +27,6 @@
 
     computed: {
       theme(){
-
         return this.$store.state.theme
       }
     },

@@ -8,11 +8,9 @@ let mongoose = require('mongoose');
 
 module.exports = new mongoose.Schema({
 
-    demoName: String,
+    name: String,
 
-    entryPath:String,
-
-    dirPath:String
+    path: String
 
 
 })

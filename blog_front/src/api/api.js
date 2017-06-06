@@ -12,7 +12,11 @@ if (product) {
 }
 class Api {
   constructor() {
-    this.host = 'http://172.31.60.66:8888'
+    if(product){
+
+    }else{
+      this.host = 'http://172.31.61.39:8888/'
+    }
   }
 
   /*注册*/
@@ -121,7 +125,7 @@ class Api {
 
   /*添加demo*/
   addDemo(data) {
-    return axios.post(baseUrl + 'demo/upload', data)
+    return axios.post(baseUrl + 'demo/add', data)
   }
 
   /*获取Demo*/
@@ -139,7 +143,7 @@ class Api {
 
   /*根据ID获取Demo*/
 
-  getDemoById(data){
+  getDemoById(data) {
     return axios.post(baseUrl + 'demo/getById', data)
   }
 

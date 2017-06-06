@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "iview": "^2.0.0-rc.10",
+    "mavon-editor": "^1.6.2",
     "vue": "^2.2.2",
     "vue-aplayer": "^0.1.1",
     "vue-quill-editor": "^2.1.0",

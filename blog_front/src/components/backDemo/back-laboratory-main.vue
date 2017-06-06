@@ -36,7 +36,7 @@
           },
           {
             title: '名称',
-            key: 'demoName'
+            key: 'name'
           },
           {
             title: '操作',

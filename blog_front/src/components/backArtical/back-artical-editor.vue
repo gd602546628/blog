@@ -21,8 +21,9 @@
 
     <div class="add-editor">
       <p class="label">编辑内容：</p>
-      <quill-editor class="editor" v-model="editorContent">
-      </quill-editor>
+      <mavon-editor  v-model="editorContent"/>
+     <!-- <quill-editor class="editor" v-model="editorContent">
+      </quill-editor>-->
     </div>
 
     <Alert type="error" class="add-alert" v-show="errMessage.show">{{errMessage.message}}</Alert>

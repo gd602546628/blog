@@ -54,89 +54,109 @@ let multiparty = require('multiparty');
 let fs = require('fs');
 let unzip = require('unzip');
 
+
 /* 上传*/
-router.post('/upload', (req, res, next) => {
+/*router.post('/upload', (req, res, next) => {
 
-    //生成multiparty对象，并配置上传目标路径
-    let form = new multiparty.Form({uploadDir: './public/demoTemp/'});
-    //上传完成后处理
+ //生成multiparty对象，并配置上传目标路径
+ let form = new multiparty.Form({uploadDir: './public/demoTemp/'});
+ //上传完成后处理
 
-    form.parse(req, (err, fields, files) => {
+ form.parse(req, (err, fields, files) => {
 
 
-        let filesTmp = JSON.stringify(files, null, 2);
-        if (err) {
-            console.log('parse error: ' + err);
-        } else {
+ let filesTmp = JSON.stringify(files, null, 2);
+ if (err) {
+ console.log('parse error: ' + err);
+ } else {
 
-            let host = fields.host[0] || '';
-            let entryName = fields.entryName[0] || '';
-            let demoName = fields.demoName[0] || '';
+ let host = fields.host[0] || '';
+ let entryName = fields.entryName[0] || '';
+ let demoName = fields.demoName[0] || '';
 
-            let inputFile = files.file[0];
-            let uploadedPath = inputFile.path;
-            let originamlFilename = inputFile.originalFilename;
+ let inputFile = files.file[0];
+ let uploadedPath = inputFile.path;
+ let originamlFilename = inputFile.originalFilename;
 
-            //字段验证
-            if (host == '' || entryName == "" || demoName == "") {
-                fs.unlink(uploadedPath, (err) => {
-                    if (err) {
-                        console.log(err)
-                    }
-                });
-                responseData.code = 1;
-                responseData.message = '主机名或入口名或Demo名为空';
-                res.json(responseData);
-                return
-            }
+ //字段验证
+ if (host == '' || entryName == "" || demoName == "") {
+ fs.unlink(uploadedPath, (err) => {
+ if (err) {
+ console.log(err)
+ }
+ });
+ responseData.code = 1;
+ responseData.message = '主机名或入口名或Demo名为空';
+ res.json(responseData);
+ return
+ }
 
-            //文件类型校验，仅支持zip格式
-            let zipTest = /(\.zip)$/;
-            if (!zipTest.test(originamlFilename)) {
-                responseData.code = 1;
-                responseData.message = '仅支持ZIP格式';
-                res.json(responseData);
-                fs.unlink(uploadedPath, (err) => {
-                    if (err) {
-                        console.log(err)
-                    }
-                });
-                return
-            }
-            let dstPath = './public/demoTemp/' + originamlFilename;
-            //重命名为真实文件名
-            fs.rename(uploadedPath, dstPath, function (err) {
-                if (err) {
-                    console.log('rename error: ' + err);
-                } else {
-                    //重命名完成后将文件解压
-                    fs.createReadStream('./public/demoTemp/' + originamlFilename).pipe(unzip.Extract({path: './public/demo'}));
-                    //删除临时文件
-                    let dirName = originamlFilename.replace('.zip', '');
-                    let dirPath = `${host}/public/demo/${dirName}`;
-                    let entryPath = `${dirPath}/${entryName}.html`;
+ //文件类型校验，仅支持zip格式
+ let zipTest = /(\.zip)$/;
+ if (!zipTest.test(originamlFilename)) {
+ responseData.code = 1;
+ responseData.message = '仅支持ZIP格式';
+ res.json(responseData);
+ fs.unlink(uploadedPath, (err) => {
+ if (err) {
+ console.log(err)
+ }
+ });
+ return
+ }
+ let dstPath = './public/demoTemp/' + originamlFilename;
+ //重命名为真实文件名
+ fs.rename(uploadedPath, dstPath, function (err) {
+ if (err) {
+ console.log('rename error: ' + err);
+ } else {
+ //重命名完成后将文件解压
+ fs.createReadStream('./public/demoTemp/' + originamlFilename).pipe(unzip.Extract({path: './public/demo'}));
+ //删除临时文件
+ let dirName = originamlFilename.replace('.zip', '');
+ let dirPath = `${host}/public/demo/${dirName}`;
+ let entryPath = `${dirPath}/${entryName}.html`;
 
-                    new Demo({
-                        dirPath: dirPath,
-                        entryPath: entryPath,
-                        demoName: demoName
-                    }).save().then(() => {
-                        responseData.code = 0;
-                        responseData.message = '添加成功';
-                        res.json(responseData);
+ new Demo({
+ dirPath: dirPath,
+ entryPath: entryPath,
+ demoName: demoName
+ }).save().then(() => {
+ responseData.code = 0;
+ responseData.message = '添加成功';
+ res.json(responseData);
 
-                    })
-                    fs.unlink(dstPath, (err) => {
-                        if (err) {
-                            console.log(err);
-                        }
-                    });
-                }
-            });
-        }
-    });
-});
+ })
+ fs.unlink(dstPath, (err) => {
+ if (err) {
+ console.log(err);
+ }
+ });
+ }
+ });
+ }
+ });
+ });*/
 
+
+/*添加DEMO*/
+
+router.post('/add', (req, res, next) => {
+    let name = req.body.name;
+    let path = req.body.path;
+
+    if (name && path) {
+        new Demo({name: name, path: path}).save(dataa => {
+            responseData.code = 0;
+            responseData.message = '添加成功'
+            res.json(responseData)
+        })
+    } else {
+        responseData.code = 1;
+        responseData.message = '名字和路径字段不能为空';
+        res.json(responseData)
+    }
+})
 
 /*分页获取Demo*/
 router.post('/get', (req, res, next) => {

@@ -7,13 +7,21 @@
         <div>添加时间：<i>{{dataFrom(currentArtical.addTime)}}</i></div>
         <div>阅读量：<i>{{currentArtical.views}}</i></div>
       </div>
-      <div class="discription" v-show="currentArtical.discription">
+     <!-- <div class="discription" v-show="currentArtical.discription">
         <p class="label">简介</p>
         <div>{{currentArtical.discription}}</div>
-      </div>
+      </div>-->
       <div class="content">
-        <p class="label">正文</p>
-        <div v-html="currentArtical.content" class="artical-content"></div>
+       <!-- <p class="label">正文</p>-->
+        <mavon-editor
+          class="artical-content"
+          :class="{star:theme==1}"
+          v-model="currentArtical.content"
+          :subfield="false"
+          :editable="false"
+          :toolbarsFlag="false"
+        />
+        <!-- <div v-html="currentArtical.content" class="artical-content"></div>-->
       </div>
     </div>
   </Card>
@@ -101,7 +109,26 @@
         color: #39f;
       }
       .artical-content {
-        margin-top: 10px
+        margin-top: 10px;
+        z-index: 9;
+
+        .v-note-panel {
+          box-shadow: none;
+        }
+        &.star {
+          background: rgba(0, 0, 0, 0.3);
+          .hljs{
+            background: rgba(0, 0, 0, 0.3);
+            color:#eee
+          }
+          .hljs-keyword{
+            color: orange;
+          }
+          .content-div {
+            color: #eee !important;
+          }
+        }
+
       }
     }
 

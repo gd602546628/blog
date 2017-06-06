@@ -7,8 +7,11 @@ import 'iview/dist/styles/iview.css';
 import iView from 'iview';
 import VueQuillEditor from 'vue-quill-editor';
 import store from './store/store'
-import Vuex from 'vuex'
-Vue.config.productionTip = false
+import Vuex from 'vuex';
+import mavonEditor from 'mavon-editor';
+import 'mavon-editor/dist/css/index.css';
+Vue.config.productionTip = false;
+Vue.use(mavonEditor);
 Vue.use(iView);
 Vue.use(VueQuillEditor);
 Vue.use(Vuex);

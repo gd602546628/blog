@@ -2,7 +2,7 @@
   <div class="catagory">
     <div class="catagory-item" v-for="(item,index) in demos" @click="getDemo(item)">
       <Card class="catagory-item-card">
-        <p>{{item.demoName}}</p>
+        <p>{{item.name}}</p>
       </Card>
     </div>
   </div>
@@ -12,26 +12,26 @@
   import Api from '@/api/api'
   export default {
     data(){
-        return {
-            demos:[]
-        }
+      return {
+        demos: []
+      }
     },
 
     /*TODO:
-    * 修改DEMO点击跳转
-    *
-    * */
-    methods:{
-        getDemo(item){
-          this.$router.push({path: 'labDetail', query: {id: item._id}})
-        }
+     * 修改DEMO点击跳转
+     *
+     * */
+    methods: {
+      getDemo(item){
+        window.open(Api.host + item.path)
+      }
     },
     created(){
-        Api.getDemo({
-            all:true
-        }).then((data)=>{
-            this.demos=data.data.demos;
-        })
+      Api.getDemo({
+        all: true
+      }).then((data) => {
+        this.demos = data.data.demos;
+      })
     }
 
   }
@@ -41,7 +41,7 @@
   .catagory {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom:30px;
+    margin-bottom: 30px;
     .catagory-item {
       width: 20%;
       padding: 10px;

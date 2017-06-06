@@ -21,9 +21,12 @@
 
     <div class="add-editor">
       <p class="label">编辑内容：</p>
-      <quill-editor class="editor" v-model="editorContent">
-      </quill-editor>
+      <!--<quill-editor class="editor" v-model="editorContent">
+      </quill-editor>-->
+      <mavon-editor  v-model="editorContent"/>
     </div>
+
+
 
     <Alert type="error" class="add-alert" v-show="errMessage.show">{{errMessage.message}}</Alert>
     <Alert type="success" class="add-alert" v-show="successMessage">保存成功</Alert>
@@ -47,7 +50,8 @@
           show: false,
           message: ''
         },
-        successMessage: false
+        successMessage: false,
+        value:'# aaa'
       }
     },
 

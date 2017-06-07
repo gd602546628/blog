@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{overHide:showMenu}" @click="hideMenu()">
     <div class="tabs-wrap">
       <div class="tabs-background" :class="{star:theme==1}"></div>
       <div class="tabs-contant">
@@ -41,7 +41,25 @@
       </div>
     </div>
 
-    <div class="content-wrap">
+    <div class="tab-menu" :class="{showMenu:showMenu}">
+      <div class="menu-icon" @click="switchMenu($event)">
+        <Icon type="navicon"></Icon>
+      </div>
+    </div>
+    <div class="menu-content" :class="{showMenu1:showMenu}">
+      <ul class="menu-content-ul">
+        <li @click="select('home')">首页</li>
+        <li @click="select('catagory')">分类</li>
+        <li @click="select('lab')">实验室</li>
+        <li @click="select('about')">关于</li>
+
+       <!-- <li @click="menuShowSkin($event)">换肤</li>-->
+
+      </ul>
+    </div>
+
+
+    <div class="content-wrap" :class="{showMenu:showMenu}">
       <div class="content">
         <div class="view">
           <router-view></router-view>
@@ -53,10 +71,10 @@
         </div>
       </div>
 
-        <!--<div class="u_wrap">
-          <div id="uyan_frame"></div>
+      <!--<div class="u_wrap">
+        <div id="uyan_frame"></div>
 
-        </div>-->
+      </div>-->
     </div>
 
     <transition name="showTop">
@@ -72,11 +90,13 @@
   import catagoryCard from '@/components/catagoryCard.vue';
   import animation from '@/class/animation/animation';
   import WeiBo from '@/components/weibo.vue';
+ // import{Icon} from 'iview'
   export default {
     name: 'tab',
     components: {
       'catagory-card': catagoryCard,
-      'wei-bo':WeiBo
+      'wei-bo': WeiBo,
+      /*'Icon':Icon*/
     },
     data () {
       return {
@@ -84,7 +104,8 @@
         lines: '',
         skinShow: false,
         timer: null,
-        showTop:false
+        showTop: false,
+        showMenu: false
       }
     },
 
@@ -116,7 +137,21 @@
       toTop(){
         let el = document.body;
         animation.animation(el, {scrollTop: 0}, 300, 'Cubic.easeOut')
-      }
+      },
+
+      switchMenu(e){
+        e.stopPropagation()
+        this.showMenu = !this.showMenu
+      },
+
+      hideMenu(){
+        this.showMenu = false;
+      },
+
+     /* menuShowSkin(e){
+        this.theme == 0 ? this.$store.commit('star') : this.$store.commit('dot')
+      }*/
+
     },
 
     created(){
@@ -139,19 +174,20 @@
           await fn()
         }
       }
+
       animation();
     },
 
     mounted(){
-      let body=document.body
-       let _this=this
-      body.onscroll=function(){
-        let height=document.body.clientHeight-200;
-        let scrollTop=body.scrollTop
-        if(scrollTop>=height){
-            _this.showTop=true
-        }else{
-          _this.showTop=false
+      let body = document.body
+      let _this = this
+      body.onscroll = function () {
+        let height = document.body.clientHeight - 200;
+        let scrollTop = body.scrollTop
+        if (scrollTop >= height) {
+          _this.showTop = true
+        } else {
+          _this.showTop = false
         }
       }
     }
@@ -177,7 +213,6 @@
       opacity: 0.7;
       &.star {
         opacity: 0.3;
-
       }
     }
 
@@ -221,7 +256,7 @@
             left: 0;
             width: 100px;
             transition: all 0.3s ease-in-out;
-            &.fromTop-enter ,&.fromTop-leave-active{
+            &.fromTop-enter, &.fromTop-leave-active {
               transform: translateY(-100px);
             }
             p {
@@ -241,9 +276,65 @@
 
   }
 
+  .showMenu {
+    transform: translateX(80%);
+  }
+
+  .showMenu1 {
+    transform: translateX(100%);
+  }
+
+  .overHide {
+    overflow: hidden;
+  }
+
+  .menu-content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    background: black;
+    z-index:5;
+    left: -80%;
+    transition: all 0.3s ease;
+    display: none;
+    .menu-content-ul {
+      margin: 20px 0 0 30px;
+      li {
+        color: #ffffff;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+    }
+
+  }
+
+  .tab-menu {
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 1);
+    z-index: 10;
+    display: none;
+    .menu-icon {
+      color: #ffffff;
+      font-size: 2rem;
+      width: 70px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+
   .content-wrap {
     max-width: 80%;
     margin: 0 auto;
+    transition: all 0.3s ease;
+    // transition: all 0.3s ease;
     .u_wrap {
       margin-top: 50px;
     }
@@ -263,7 +354,7 @@
     }
     .right-content {
       width: 30%;
-      .weibo{
+      .weibo {
         margin-bottom: 20px;
 
       }
@@ -280,13 +371,42 @@
     background-image: url('../../assets/scroll.png');
     background-repeat: no-repeat;
     transition: all 0.5s ease-in-out;
-    &.showTop-enter{
+    &.showTop-enter {
       transform: translateY(-900px);
     }
-    &.showTop-leave-active{
+    &.showTop-leave-active {
       transform: translateY(-900px);
     }
   }
+
+  @media screen and (max-width: 800px) {
+    .toTop {
+      display: none;
+    }
+    .content-wrap {
+      max-width: 100%;
+      .content {
+        .view {
+          margin: 0;
+          max-width: 90%;
+        }
+      }
+    }
+    .right-content {
+      display: none;
+    }
+    .tabs-wrap {
+      display: none;
+    }
+    .tab-menu {
+      display: block;
+    }
+    .menu-content {
+      display: block;
+    }
+  }
+
+
 </style>
 
 

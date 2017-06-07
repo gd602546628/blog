@@ -1,11 +1,11 @@
 <template>
   <div class="artical-wrap">
-    <el-menu mode="horizontal" active-name="1" v-on:on-select="select">
+    <Menu mode="horizontal" active-name="1" v-on:on-select="select">
       <div class="layout-assistant">
         <Menu-item name="1">查看文章</Menu-item>
         <Menu-item name="2">添加文章</Menu-item>
       </div>
-    </el-menu>
+    </Menu>
 
     <div class="content-wrap">
       <Add v-show="current==2"></Add>
@@ -23,13 +23,13 @@
 </template>
 
 <script>
-  import {Menu} from 'iview'
+ // import {Menu} from 'iview'
   import Add from "@/components/backArtical/back-artical-add.vue"
   import Main from '@/components/backArtical/back-artical-main.vue'
   import edi from '@/components/backArtical/back-artical-editor.vue'
   export default{
     components: {
-      'el-menu': Menu,
+     /* 'el-menu': Menu,*/
       Add: Add,
       'el-main': Main,
       'el-editor':edi,

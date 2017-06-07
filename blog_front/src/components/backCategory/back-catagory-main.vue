@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-table border :context="self" :columns="columns7" :data="data6"></el-table>
+    <Table border :context="self" :columns="columns7" :data="data6"></Table>
     <Page
       :total="total"
       :current="currentPage"
@@ -13,21 +13,21 @@
       <Input v-model="value" placeholder="请输入分类名称" class="model-input"></Input>
       <Alert type="error" v-show="modelErr.show">{{modelErr.message}}</Alert>
       <div slot="footer">
-        <i-button @click="onCannel">取消</i-button>
-        <i-button type="primary" @click="onOk()">确定</i-button>
+        <Button @click="onCannel">取消</Button>
+        <Button type="primary" @click="onOk()">确定</Button>
       </div>
     </Modal>
   </div>
 </template>
 
 <script>
-  import {Table, Icon, Button} from 'iview';
+  //import {Table, Icon, Button} from 'iview';
   import Api from "@/api/api"
   export default {
     components: {
-      'el-table': Table,
+     /* 'el-table': Table,
       'Icon': Icon,
-      'i-button': Button
+      'i-button': Button*/
     },
     data () {
       return {

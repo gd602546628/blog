@@ -10,7 +10,11 @@
 
 <script>
   import Api from '../api/api'
+ // import {Card} from 'iview'
   export default{
+      components:{
+        /*  'Card':Card*/
+      },
     data(){
       return {
         catagoryList: [],

@@ -1,11 +1,11 @@
 <template>
   <div class="back-catagory">
-    <el-menu mode="horizontal" active-name="1" v-on:on-select="select">
+    <Menu mode="horizontal" active-name="1" v-on:on-select="select">
       <div class="layout-assistant">
         <Menu-item name="1">查看分类</Menu-item>
         <Menu-item name="2">添加分类</Menu-item>
       </div>
-    </el-menu>
+    </Menu>
 
     <div class="content-wrap">
       <el-main v-show="current==1"></el-main>
@@ -15,13 +15,13 @@
 </template>
 
 <script>
-  import {Menu, MenuItem} from 'iview';
+  //import {Menu, MenuItem} from 'iview';
   import Main from "@/components/backCategory/back-catagory-main.vue";
   import Add from  "@/components/backCategory/back-catagory-add.vue";
   export default {
     components: {
-      'el-menu': Menu,
-      'Menu-item': MenuItem,
+      /*'el-menu': Menu,
+      'Menu-item': MenuItem,*/
       'el-main': Main,
       'el-add': Add
     },

@@ -5,7 +5,7 @@
     <h2 class="title color-font">{{artical.title}}</h2>
     <div class="artical-item">
       <span>分类：</span>
-      <p class="color-font">{{artical.catagory.name}}</p>
+      <p class="color-font">{{artical.catagory&&artical.catagory.name}}</p>
     </div>
 
     <div class="artical-item">
@@ -24,15 +24,19 @@
 
     <div class="button-wrap">
       <!--<router-link :to=""></router-link>-->
-      <Button type="primary" class="readArtical" @click="readArtical(artical)">查看文章</Button>
+      <iButton type="primary" class="readArtical" @click="readArtical(artical)">查看文章</iButton>
     </div>
 
   </Card>
 </template>
 
 <script>
-
+  //import {Card,Button} from 'iview'
   export default{
+    components:{
+    /*  'Card':Card,
+      'iButton':Button*/
+    },
     name: 'home',
     data () {
       return {

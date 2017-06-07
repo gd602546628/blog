@@ -3,12 +3,20 @@
  */
 
 
+const prdouct = false;
+
 class Config {
 
     constructor() {
-        this.host = "localhost";
-        this.port = 8888;
-        this.dbName='blog';
+        if (prdouct) {
+            this.host = 'http://172.18.174.208';
+            this.port = 8080;
+            this.dbName = 'blog';
+        } else {
+            this.host = '172.31.61.39';
+            this.port = 8888;
+            this.dbName = 'blog';
+        }
     }
 
 }

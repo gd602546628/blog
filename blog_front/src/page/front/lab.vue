@@ -53,4 +53,12 @@
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    .catagory{
+      .catagory-item {
+        width: 33.33%;
+      }
+    }
+  }
 </style>

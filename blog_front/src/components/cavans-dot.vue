@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="dot"></canvas>
+  <canvas ref="dot" class="cavans"></canvas>
 </template>
 
 <script>
@@ -11,4 +11,10 @@
   }
 </script>
 
-<style lang='scss' rel='stylesheet/scss'></style>
+<style lang='scss' rel='stylesheet/scss' scoped>
+/*  @media screen and(max-width: 800px) {
+    .cavans {
+      display: none;
+    }
+  }*/
+</style>

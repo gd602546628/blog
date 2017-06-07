@@ -21,7 +21,6 @@ app.use('/public', express.static(path.resolve('public')));
 app.use(bodyParser.urlencoded({extended: true, limit: '5mb'}));
 app.use(bodyParser.json({limit: '5mb'}));
 
-
 /*跨域处理*/
 app.all('*', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -35,7 +34,14 @@ app.all('*', function (req, res, next) {
 //博客应用
 app.use('/blog', require('./blog/index'));
 
-let dbPath=`mongodb://${config.host}/${config.dbName}`
+//首页重定向
+app.get('/', (req, res, next) => {
+    res.redirect('../public/blog/index.html')
+    res.end()
+
+})
+
+let dbPath = `mongodb://${config.host}/${config.dbName}`
 mongoose.connect(dbPath, function (err) {
     if (err) {
         console.log('数据库连接失败');

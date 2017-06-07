@@ -8,21 +8,21 @@
       </div>
     </el-menu>-->
     <div class="layout-content">
-      <el-table stripe :columns="columns1" :data="data1" class="table"></el-table>
+      <Table stripe :columns="columns1" :data="data1" class="table"></Table>
       <Page :total="total" :current="currentPage" :page-size="this.limit" class="user-page" v-on:on-change="getUser"></Page>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import {Menu, MenuItem, Table, Page} from 'iview';
+ // import {Menu, MenuItem, Table, Page} from 'iview';
   import Api from '@/api/api'
   export default{
     components: {
-      'el-menu': Menu,
+     /* 'el-menu': Menu,
       'Menu-item': MenuItem,
       'el-table': Table,
-      Page: Page
+      Page: Page*/
     },
     data(){
       return {

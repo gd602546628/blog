@@ -2,24 +2,24 @@
   <div class="login-module">
     <Card v-show="userState==0">
       <div class="login-wrap">
-        <el-form ref="formInline" :model="formInline" :rules="ruleInline">
+        <Form ref="formInline" :model="formInline" :rules="ruleInline">
           <p class="tittle">用户登录</p>
           <Form-item prop="user">
-            <el-input type="text" v-model="formInline.user" placeholder="请输入用户名">
+            <Input type="text" v-model="formInline.user" placeholder="请输入用户名">
               <Icon type="ios-person-outline" slot="prepend"></Icon>
-            </el-input>
+            </Input>
           </Form-item>
           <Form-item prop="password">
-            <el-input type="password" v-model="formInline.password" placeholder="请输入密码">
+            <Input type="password" v-model="formInline.password" placeholder="请输入密码">
               <Icon type="ios-locked-outline" slot="prepend"></Icon>
-            </el-input>
+            </Input>
           </Form-item>
           <Alert type="error" v-show="errorMessage.show">{{errorMessage.message}}</Alert>
           <Form-item>
             <Button type="primary" @click="login()">登录</Button>
           </Form-item>
 
-        </el-form>
+        </Form>
       </div>
     </Card>
 
@@ -66,18 +66,18 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import {Form, FormItem, Input, Icon, Alert, Card} from 'iview';
+  //import {Form, FormItem, Input, Icon, Alert, Card} from 'iview';
   import Api from '@/api/api';
   import router from '@/router/index';
   export default {
 
     components: {
-      'el-form': Form,
+     /* 'el-form': Form,
       'Form-item': FormItem,
       'el-input': Input,
       Icon: Icon,
       Alert: Alert,
-      Card: Card
+      Card: Card*/
     },
     data () {
       return {

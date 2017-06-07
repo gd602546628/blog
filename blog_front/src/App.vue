@@ -113,5 +113,17 @@
     padding: 0;
   }
 
-
+ @media screen and (max-width:800px ) {
+   .cavans{
+     display: none;
+   }
+   #app{
+     .footer{
+       height: 70px;
+       .footer-background{
+         background-image: none;
+       }
+     }
+   }
+ }
 </style>

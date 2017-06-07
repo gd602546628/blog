@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-table border :context="self" :columns="columns7" :data="data6"></el-table>
+    <Table border :context="self" :columns="columns7" :data="data6"></Table>
     <Page
       :total="total"
       :current="currentPage"
@@ -12,13 +12,13 @@
 </template>
 
 <script>
-  import {Table, Icon, Button} from 'iview';
+  //import {Table, Icon, Button} from 'iview';
   import Api from "@/api/api"
   export default {
     components: {
-      'el-table': Table,
+      /*'el-table': Table,
       'Icon': Icon,
-      'i-button': Button
+      'i-button': Button*/
     },
     data () {
       return {

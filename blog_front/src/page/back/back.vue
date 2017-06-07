@@ -1,7 +1,7 @@
 <template>
 
   <div class="layout" v-if="isAdmin">
-    <el-menu mode="horizontal" theme="dark" :active-name="activeRoute" class="topNav" v-on:on-select="select">
+    <Menu mode="horizontal" theme="dark" :active-name="activeRoute" class="topNav" v-on:on-select="select">
       <div class="layout-nav">
 
         <Menu-item name="user">
@@ -31,7 +31,7 @@
         </Menu-item>
 
       </div>
-    </el-menu>
+    </Menu>
     <router-view class="layout-content"></router-view>
   </div>
 
@@ -45,14 +45,14 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import {Icon, MenuItem, Menu, Breadcrumb, BreadcrumbItem} from 'iview';
+  //import {Icon, MenuItem, Menu, Breadcrumb, BreadcrumbItem} from 'iview';
   import router from"../../router/index";
   import login from '../../components/login.vue';
   export default {
     components: {
-      Icon: Icon,
+     /* Icon: Icon,
       'Menu-item': MenuItem,
-      'el-menu': Menu,
+      'el-menu': Menu,*/
       'login': login
     },
     data(){
@@ -74,7 +74,6 @@
           this.isAdmin = true
         }
       }
-      ;
     }
 
   }

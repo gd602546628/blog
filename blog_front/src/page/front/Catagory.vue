@@ -42,7 +42,7 @@
     flex-wrap: wrap;
     margin-bottom: 30px;
     .catagory-item {
-      width: 20%;
+      width: 25%;
       padding: 10px;
       .catagory-item-card {
         height: 60px;
@@ -58,6 +58,14 @@
             border-color: #ffffff;
           }
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .catagory{
+      .catagory-item {
+        width: 33.33%;
       }
     }
   }

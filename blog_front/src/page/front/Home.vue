@@ -15,10 +15,13 @@
 <script>
   import Api from '@/api/api';
   import articalList from '@/components/artical-list.vue';
+  //import{Icon,Page} from 'iview'
   export default{
     name: 'home',
     components:{
-        'artical-list':articalList
+        'artical-list':articalList,
+     /* 'Icon':Icon,
+      'Page':Page*/
     },
     data () {
       return {

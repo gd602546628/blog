@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrap">
     <div v-show="hide" class="open-bar" @click="show">
       <Icon type="chevron-right"></Icon>
     </div>
@@ -48,10 +48,12 @@
   import VueAplayer from 'vue-aplayer'
   import Api from '../api/api'
   import {Drag} from '../class/drag'
+  //import{Icon} from 'iview'
   export default {
 
     components: {
-      'a-player': VueAplayer
+      'a-player': VueAplayer,
+     /* 'Icon':Icon*/
     },
     data(){
       return {
@@ -237,4 +239,11 @@
     cursor: move;
     user-select: none;
   }
+
+  @media screen and (max-width: 800px){
+    .wrap{
+      display: none;
+    }
+  }
+
 </style>

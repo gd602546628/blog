@@ -1,11 +1,11 @@
 <template>
   <div class="back-catagory">
-    <el-menu mode="horizontal" active-name="1" v-on:on-select="select">
+    <Menu mode="horizontal" active-name="1" v-on:on-select="select">
       <div class="layout-assistant">
         <Menu-item name="1">demo列表</Menu-item>
         <Menu-item name="2">添加demo</Menu-item>
       </div>
-    </el-menu>
+    </Menu>
 
     <div class="content-wrap">
       <el-main v-show="current==1"></el-main>
@@ -15,13 +15,13 @@
 </template>
 
 <script>
-  import {Menu, MenuItem} from 'iview';
+  /*import {Menu, MenuItem} from 'iview';*/
   import Main from "@/components/backDemo/back-laboratory-main.vue";
   import Add from  "@/components/backDemo/back-laboratory-add.vue";
   export default {
     components: {
-      'el-menu': Menu,
-      'Menu-item': MenuItem,
+     /* 'el-menu': Menu,
+      'Menu-item': MenuItem,*/
       'el-main': Main,
       'el-add': Add
     },

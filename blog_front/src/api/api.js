@@ -6,15 +6,15 @@ import axios from 'axios';
 let baseUrl = "";
 let product = false;
 if (product) {
-
+  baseUrl = 'http://120.77.81.14:8080/blog/api/'
 } else {
   baseUrl = 'http://172.31.61.39:8888/blog/api/'
 }
 class Api {
   constructor() {
-    if(product){
-
-    }else{
+    if (product) {
+      this.host = 'http://120.77.81.14:8080/'
+    } else {
       this.host = 'http://172.31.61.39:8888/'
     }
   }

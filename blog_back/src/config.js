@@ -9,7 +9,7 @@ class Config {
 
     constructor() {
         if (prdouct) {
-            this.host = 'http://172.18.174.208';
+            this.host = '172.18.174.208';
             this.port = 8080;
             this.dbName = 'blog';
         } else {

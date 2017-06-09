@@ -38,7 +38,6 @@ let createRequest = function (path, data, success, fail) {
                 if (music_req == '') {
                     createRequest(path, data, success, fail)
                 } else {
-                    console.log('success')
                     success(JSON.parse(music_req));
                 }
             })
@@ -109,7 +108,8 @@ function groupList(id) {
         getList(id).then((musicListResponse) => {
             let musicList = musicListResponse.playlist;
             result.name = musicList.name;
-            result.coverImg = musicList.creator.backgroundUrl;
+            //result.coverImg = musicList.creator.backgroundUrl;
+            //result.coverImg = 'http://p1.music.126.net/qn1eUXlr5-BpX9croMDXIw==/' + musicList.coverImgId+'.jpg'
             let musicIds = musicList.trackIds;
             musicIds = musicIds.map(item => {
                 return item.id
@@ -121,7 +121,6 @@ function groupList(id) {
                 promiseArr.push(getMusic(item).then(data => {
                     resultArr = resultArr.concat(data.data);
                 }).catch(err => {
-                    console.log(err);
                 }))
             })
 
@@ -136,6 +135,7 @@ function groupList(id) {
                     };
                     musicList.tracks.forEach(track => {
                         if (item.id == track.id) {
+                            result.coverImg=track.al.picUrl;
                             musicItem.pic = track.al.picUrl;
                             musicItem.author = track.ar[0].name;
                             musicItem.title = track.name;
@@ -158,4 +158,4 @@ function groupList(id) {
     })
 }
 
-module.exports=groupList;
+module.exports = groupList;

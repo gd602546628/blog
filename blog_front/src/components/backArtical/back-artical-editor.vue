@@ -55,10 +55,6 @@
       },
 
       onSubmit(){
-        console.log(this.tittle)
-        console.log(this.catagorySelect)
-        console.log(this.desription)
-        console.log(this.editorContent)
         Api.editorArtical({
           title: this.tittle,
           catagory: this.catagorySelect,
